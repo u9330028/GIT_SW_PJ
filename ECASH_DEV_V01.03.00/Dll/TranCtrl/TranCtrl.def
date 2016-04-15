@@ -1,0 +1,6 @@
+; TranCtrl.def : Declares the module parameters for the DLL.
+
+LIBRARY      "TranCtrl"
+DESCRIPTION  'TranCtrl Windows Dynamic Link Library'
+
+EXPORTS

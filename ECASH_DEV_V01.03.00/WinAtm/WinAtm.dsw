@@ -1,0 +1,128 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "DevCtrl"=..\Dll\DevCtrl\DevCtrl.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name ProCtrl
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name SplDev
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name VolCtrl
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name NetCtrl
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "NetCtrl"=..\Dll\NetCtrl\NetCtrl.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name ProCtrl
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "ProCtrl"=..\Dll\ProCtrl\ProCtrl.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "TranCtrl"=..\Dll\TranCtrl\TranCtrl.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name DevCtrl
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name NetCtrl
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ProCtrl
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name VolCtrl
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "VolCtrl"=..\Dll\VolCtrl\VolCtrl.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "WinAtm"=.\WinAtm.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name ProCtrl
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name NetCtrl
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name TranCtrl
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name DevCtrl
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

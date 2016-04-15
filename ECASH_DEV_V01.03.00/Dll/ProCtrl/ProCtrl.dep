@@ -1,0 +1,44 @@
+# Microsoft Developer Studio Generated Dependency File, included by ProCtrl.mak
+
+.\ErrStack.cpp : \
+	".\StdAfx.h"\
+	{$(INCLUDE)}"Common.h"\
+	{$(INCLUDE)}"devdef.h"\
+	{$(INCLUDE)}"Profile.h"\
+	{$(INCLUDE)}"Profiledef.h"\
+	
+
+.\ErrSum.cpp : \
+	".\StdAfx.h"\
+	{$(INCLUDE)}"Common.h"\
+	{$(INCLUDE)}"devdef.h"\
+	{$(INCLUDE)}"Profile.h"\
+	{$(INCLUDE)}"Profiledef.h"\
+	
+
+.\ProCtrl.cpp : \
+	".\StdAfx.h"\
+	
+
+.\ProCtrl.rc : \
+	".\res\ProCtrl.rc2"\
+	
+
+.\Profile.cpp : \
+	".\StdAfx.h"\
+	{$(INCLUDE)}"Common.h"\
+	{$(INCLUDE)}"devdef.h"\
+	{$(INCLUDE)}"Profile.h"\
+	{$(INCLUDE)}"Profiledef.h"\
+	
+
+.\StdAfx.cpp : \
+	".\StdAfx.h"\
+	
+
+.\Total.cpp : \
+	".\StdAfx.h"\
+	{$(INCLUDE)}"Common.h"\
+	{$(INCLUDE)}"Profile.h"\
+	{$(INCLUDE)}"Profiledef.h"\
+	

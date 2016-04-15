@@ -1,0 +1,18 @@
+# Microsoft Developer Studio Generated Dependency File, included by NetCtrl.mak
+
+.\NetCtrl.cpp : \
+	".\StdAfx.h"\
+	
+
+.\NetCtrl.rc : \
+	".\res\NetCtrl.rc2"\
+	
+
+.\NetWork.cpp : \
+	".\NetWork.h"\
+	".\StdAfx.h"\
+	
+
+.\StdAfx.cpp : \
+	".\StdAfx.h"\
+	

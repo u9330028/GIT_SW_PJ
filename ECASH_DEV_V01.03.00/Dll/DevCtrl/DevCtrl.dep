@@ -1,0 +1,494 @@
+# Microsoft Developer Studio Generated Dependency File, included by DevCtrl.mak
+
+.\DevApl.cpp : \
+	"..\..\H\Builder\TranCtrlProc.h"\
+	"..\..\H\Builder\TranCtrlProc_STA.h"\
+	"..\..\H\Builder\TranFuncProc.h"\
+	"..\..\H\Builder\TranFuncProc_STA.h"\
+	"..\..\H\Builder\TranRetCode.h"\
+	"..\..\H\Builder\TranTranProc.h"\
+	"..\..\H\Common\Class.h"\
+	"..\..\H\Common\ClassInclude.h"\
+	"..\..\H\Common\ClassPointer.h"\
+	"..\..\H\Common\CmnLib.h"\
+	"..\..\H\Common\CmnLibIn.h"\
+	"..\..\H\Common\ConstDef.h"\
+	"..\..\H\Common\Define.h"\
+	"..\..\H\Dll\Dcpram4ATM.h"\
+	"..\..\H\Dll\DevCmn.h"\
+	"..\..\H\Dll\DevEtc.h"\
+	"..\..\H\Dll\DevICCard.h"\
+	"..\..\H\Dll\DevSeed.h"\
+	"..\..\H\Dll\HostIF.h"\
+	"..\..\h\dll\init_dll.h"\
+	"..\..\H\Dll\IVolume.h"\
+	"..\..\H\Dll\LcpCard.h"\
+	"..\..\H\Dll\Lcpram.h"\
+	"..\..\H\Dll\PciDcpCard.h"\
+	"..\..\H\Dll\Profile.h"\
+	"..\..\H\Dll\Profiledef.h"\
+	"..\..\H\Dll\Volume.h"\
+	"..\..\h\seed\qsl.h"\
+	"..\..\h\seed\qslkey.h"\
+	"..\..\H\Tran\TranAjmsProc.h"\
+	"..\..\H\Tran\TranCmn.h"\
+	"..\..\H\Tran\TranCmnEtc.h"\
+	"..\..\H\Tran\TranCmnHost.h"\
+	"..\..\H\Tran\TranCmnMenu.h"\
+	"..\..\H\Tran\TranCmnUser.h"\
+	"..\..\H\Tran\TranDevProc.h"\
+	"..\..\H\Tran\TranHostProc.h"\
+	"..\..\H\Tran\TranInputProc.h"\
+	"..\..\H\Tran\TranKCashProc.h"\
+	"..\..\H\Tran\TranMainProc.h"\
+	"..\..\H\Tran\TranMenuProc.h"\
+	"..\..\H\Tran\TranNmsProc.h"\
+	"..\..\H\Tran\TranOutputProc.h"\
+	"..\..\H\Tran\TranTermProc.h"\
+	"..\..\WinAtm\handleocr.h"\
+	"..\..\WinAtm\nhguros.h"\
+	"..\..\WinAtm\nhmwi.h"\
+	"..\..\WinAtm\WinAtmCtl.h"\
+	
+
+.\DevCmn.cpp : \
+	"..\..\H\Common\Class.h"\
+	"..\..\H\Common\ClassInclude.h"\
+	"..\..\H\Common\ClassPointer.h"\
+	"..\..\H\Common\ClassSetOwner.h"\
+	"..\..\H\Common\CmnLib.h"\
+	"..\..\H\Common\CmnLibIn.h"\
+	"..\..\H\Common\ConstDef.h"\
+	"..\..\H\Common\Define.h"\
+	"..\..\H\Dll\Dcpram4ATM.h"\
+	"..\..\H\Dll\DevCmn.h"\
+	"..\..\H\Dll\DevEtc.h"\
+	"..\..\H\Dll\DevICCard.h"\
+	"..\..\H\Dll\DevSeed.h"\
+	"..\..\h\dll\eventque.h"\
+	"..\..\H\Dll\HostIF.h"\
+	"..\..\h\dll\init_dll.h"\
+	"..\..\H\Dll\IVolume.h"\
+	"..\..\H\Dll\LcpCard.h"\
+	"..\..\H\Dll\Lcpram.h"\
+	"..\..\H\Dll\PciDcpCard.h"\
+	"..\..\H\Dll\Profile.h"\
+	"..\..\H\Dll\Profiledef.h"\
+	"..\..\H\Dll\Volume.h"\
+	"..\..\h\seed\qsl.h"\
+	"..\..\h\seed\qslkey.h"\
+	"..\..\WinAtm\handleocr.h"\
+	"..\..\WinAtm\nhguros.h"\
+	"..\..\WinAtm\nhmwi.h"\
+	"..\..\WinAtm\WinAtmCtl.h"\
+	
+
+.\DevCsh.cpp : \
+	"..\..\H\Common\Class.h"\
+	"..\..\H\Common\ClassInclude.h"\
+	"..\..\H\Common\ClassPointer.h"\
+	"..\..\H\Common\CmnLib.h"\
+	"..\..\H\Common\CmnLibIn.h"\
+	"..\..\H\Common\ConstDef.h"\
+	"..\..\H\Common\Define.h"\
+	"..\..\H\Dll\Dcpram4ATM.h"\
+	"..\..\H\Dll\DevCmn.h"\
+	"..\..\H\Dll\DevICCard.h"\
+	"..\..\H\Dll\DevSeed.h"\
+	"..\..\H\Dll\HostIF.h"\
+	"..\..\h\dll\init_dll.h"\
+	"..\..\H\Dll\IVolume.h"\
+	"..\..\H\Dll\LcpCard.h"\
+	"..\..\H\Dll\Lcpram.h"\
+	"..\..\H\Dll\PciDcpCard.h"\
+	"..\..\H\Dll\Profile.h"\
+	"..\..\H\Dll\Profiledef.h"\
+	"..\..\H\Dll\Volume.h"\
+	"..\..\h\seed\qsl.h"\
+	"..\..\h\seed\qslkey.h"\
+	"..\..\WinAtm\handleocr.h"\
+	"..\..\WinAtm\nhguros.h"\
+	"..\..\WinAtm\nhmwi.h"\
+	"..\..\WinAtm\WinAtmCtl.h"\
+	
+
+.\DevCtrl.rc : \
+	".\res\DevCtrl.rc2"\
+	
+
+.\DevEMV.cpp : \
+	"..\..\H\Common\Class.h"\
+	"..\..\H\Common\ClassInclude.h"\
+	"..\..\H\Common\ClassPointer.h"\
+	"..\..\H\Common\CmnLib.h"\
+	"..\..\H\Common\CmnLibIn.h"\
+	"..\..\H\Common\ConstDef.h"\
+	"..\..\H\Common\Define.h"\
+	"..\..\H\Dll\Dcpram4ATM.h"\
+	"..\..\H\Dll\DevCmn.h"\
+	"..\..\H\Dll\DevEtc.h"\
+	"..\..\H\Dll\DevICCard.h"\
+	"..\..\H\Dll\DevSeed.h"\
+	"..\..\H\Dll\HostIF.h"\
+	"..\..\h\dll\init_dll.h"\
+	"..\..\H\Dll\IVolume.h"\
+	"..\..\H\Dll\LcpCard.h"\
+	"..\..\H\Dll\Lcpram.h"\
+	"..\..\H\Dll\PciDcpCard.h"\
+	"..\..\H\Dll\Profile.h"\
+	"..\..\H\Dll\Profiledef.h"\
+	"..\..\H\Dll\Volume.h"\
+	"..\..\h\seed\qsl.h"\
+	"..\..\h\seed\qslkey.h"\
+	"..\..\WinAtm\handleocr.h"\
+	"..\..\WinAtm\nhguros.h"\
+	"..\..\WinAtm\nhmwi.h"\
+	"..\..\WinAtm\WinAtmCtl.h"\
+	
+
+.\DevEventQue.cpp : \
+	"..\..\H\Common\Class.h"\
+	"..\..\H\Common\ClassInclude.h"\
+	"..\..\H\Common\ClassPointer.h"\
+	"..\..\H\Common\CmnLib.h"\
+	"..\..\H\Common\CmnLibIn.h"\
+	"..\..\H\Common\ConstDef.h"\
+	"..\..\H\Common\Define.h"\
+	"..\..\H\Dll\Dcpram4ATM.h"\
+	"..\..\H\Dll\DevCmn.h"\
+	"..\..\H\Dll\DevEtc.h"\
+	"..\..\H\Dll\DevICCard.h"\
+	"..\..\H\Dll\DevSeed.h"\
+	"..\..\h\dll\eventque.h"\
+	"..\..\H\Dll\HostIF.h"\
+	"..\..\h\dll\init_dll.h"\
+	"..\..\H\Dll\IVolume.h"\
+	"..\..\H\Dll\LcpCard.h"\
+	"..\..\H\Dll\Lcpram.h"\
+	"..\..\H\Dll\PciDcpCard.h"\
+	"..\..\H\Dll\Profile.h"\
+	"..\..\H\Dll\Profiledef.h"\
+	"..\..\H\Dll\Volume.h"\
+	"..\..\h\seed\qsl.h"\
+	"..\..\h\seed\qslkey.h"\
+	"..\..\WinAtm\handleocr.h"\
+	"..\..\WinAtm\nhguros.h"\
+	"..\..\WinAtm\nhmwi.h"\
+	"..\..\WinAtm\WinAtmCtl.h"\
+	
+
+.\DevFinanceIC.cpp : \
+	"..\..\H\Common\Class.h"\
+	"..\..\H\Common\ClassInclude.h"\
+	"..\..\H\Common\ClassPointer.h"\
+	"..\..\H\Common\CmnLib.h"\
+	"..\..\H\Common\CmnLibIn.h"\
+	"..\..\H\Common\ConstDef.h"\
+	"..\..\H\Common\Define.h"\
+	"..\..\H\Dll\Dcpram4ATM.h"\
+	"..\..\H\Dll\DevCmn.h"\
+	"..\..\H\Dll\DevEtc.h"\
+	"..\..\H\Dll\DevICCard.h"\
+	"..\..\H\Dll\DevSeed.h"\
+	"..\..\H\Dll\HostIF.h"\
+	"..\..\h\dll\init_dll.h"\
+	"..\..\H\Dll\IVolume.h"\
+	"..\..\H\Dll\LcpCard.h"\
+	"..\..\H\Dll\Lcpram.h"\
+	"..\..\H\Dll\PciDcpCard.h"\
+	"..\..\H\Dll\Profile.h"\
+	"..\..\H\Dll\Profiledef.h"\
+	"..\..\H\Dll\Volume.h"\
+	"..\..\h\seed\qsl.h"\
+	"..\..\h\seed\qslkey.h"\
+	"..\..\WinAtm\handleocr.h"\
+	"..\..\WinAtm\nhguros.h"\
+	"..\..\WinAtm\nhmwi.h"\
+	"..\..\WinAtm\WinAtmCtl.h"\
+	
+
+.\DevKCash.cpp : \
+	"..\..\H\Common\Class.h"\
+	"..\..\H\Common\ClassInclude.h"\
+	"..\..\H\Common\ClassPointer.h"\
+	"..\..\H\Common\CmnLib.h"\
+	"..\..\H\Common\CmnLibIn.h"\
+	"..\..\H\Common\ConstDef.h"\
+	"..\..\H\Common\Define.h"\
+	"..\..\H\Dll\Dcpram4ATM.h"\
+	"..\..\H\Dll\DevCmn.h"\
+	"..\..\H\Dll\DevEtc.h"\
+	"..\..\H\Dll\DevICCard.h"\
+	"..\..\H\Dll\DevSeed.h"\
+	"..\..\H\Dll\HostIF.h"\
+	"..\..\h\dll\init_dll.h"\
+	"..\..\H\Dll\IVolume.h"\
+	"..\..\H\Dll\LcpCard.h"\
+	"..\..\H\Dll\Lcpram.h"\
+	"..\..\H\Dll\PciDcpCard.h"\
+	"..\..\H\Dll\Profile.h"\
+	"..\..\H\Dll\Profiledef.h"\
+	"..\..\H\Dll\Volume.h"\
+	"..\..\h\seed\qsl.h"\
+	"..\..\h\seed\qslkey.h"\
+	"..\..\WinAtm\handleocr.h"\
+	"..\..\WinAtm\nhguros.h"\
+	"..\..\WinAtm\nhmwi.h"\
+	"..\..\WinAtm\WinAtmCtl.h"\
+	
+
+.\DevNet.cpp : \
+	"..\..\H\Common\Class.h"\
+	"..\..\H\Common\ClassInclude.h"\
+	"..\..\H\Common\ClassPointer.h"\
+	"..\..\H\Common\CmnLib.h"\
+	"..\..\H\Common\CmnLibIn.h"\
+	"..\..\H\Common\ConstDef.h"\
+	"..\..\H\Common\Define.h"\
+	"..\..\H\Dll\Dcpram4ATM.h"\
+	"..\..\H\Dll\DevCmn.h"\
+	"..\..\H\Dll\DevEtc.h"\
+	"..\..\H\Dll\DevICCard.h"\
+	"..\..\H\Dll\DevSeed.h"\
+	"..\..\H\Dll\HostIF.h"\
+	"..\..\h\dll\init_dll.h"\
+	"..\..\H\Dll\IVolume.h"\
+	"..\..\H\Dll\LcpCard.h"\
+	"..\..\H\Dll\Lcpram.h"\
+	"..\..\H\Dll\PciDcpCard.h"\
+	"..\..\H\Dll\Profile.h"\
+	"..\..\H\Dll\Profiledef.h"\
+	"..\..\H\Dll\Volume.h"\
+	"..\..\h\seed\qsl.h"\
+	"..\..\h\seed\qslkey.h"\
+	"..\..\WinAtm\handleocr.h"\
+	"..\..\WinAtm\nhguros.h"\
+	"..\..\WinAtm\nhmwi.h"\
+	"..\..\WinAtm\WinAtmCtl.h"\
+	
+
+.\DevRDF.cpp : \
+	"..\..\H\Common\Class.h"\
+	"..\..\H\Common\ClassInclude.h"\
+	"..\..\H\Common\ClassPointer.h"\
+	"..\..\H\Common\CmnLib.h"\
+	"..\..\H\Common\CmnLibIn.h"\
+	"..\..\H\Common\ConstDef.h"\
+	"..\..\H\Common\Define.h"\
+	"..\..\H\Dll\Dcpram4ATM.h"\
+	"..\..\H\Dll\DevCmn.h"\
+	"..\..\H\Dll\DevEtc.h"\
+	"..\..\H\Dll\DevICCard.h"\
+	"..\..\H\Dll\DevSeed.h"\
+	"..\..\H\Dll\HostIF.h"\
+	"..\..\h\dll\init_dll.h"\
+	"..\..\H\Dll\IVolume.h"\
+	"..\..\H\Dll\LcpCard.h"\
+	"..\..\H\Dll\Lcpram.h"\
+	"..\..\H\Dll\PciDcpCard.h"\
+	"..\..\H\Dll\Profile.h"\
+	"..\..\H\Dll\Profiledef.h"\
+	"..\..\H\Dll\Volume.h"\
+	"..\..\h\seed\qsl.h"\
+	"..\..\h\seed\qslkey.h"\
+	"..\..\WinAtm\handleocr.h"\
+	"..\..\WinAtm\nhguros.h"\
+	"..\..\WinAtm\nhmwi.h"\
+	"..\..\WinAtm\WinAtmCtl.h"\
+	
+
+.\DevScr.cpp : \
+	"..\..\H\Common\Class.h"\
+	"..\..\H\Common\ClassInclude.h"\
+	"..\..\H\Common\ClassPointer.h"\
+	"..\..\H\Common\CmnLib.h"\
+	"..\..\H\Common\CmnLibIn.h"\
+	"..\..\H\Common\ConstDef.h"\
+	"..\..\H\Common\Define.h"\
+	"..\..\H\Dll\Dcpram4ATM.h"\
+	"..\..\H\Dll\DevCmn.h"\
+	"..\..\H\Dll\DevEtc.h"\
+	"..\..\H\Dll\DevICCard.h"\
+	"..\..\H\Dll\DevSeed.h"\
+	"..\..\H\Dll\HostIF.h"\
+	"..\..\h\dll\init_dll.h"\
+	"..\..\H\Dll\IVolume.h"\
+	"..\..\H\Dll\LcpCard.h"\
+	"..\..\H\Dll\Lcpram.h"\
+	"..\..\H\Dll\PciDcpCard.h"\
+	"..\..\H\Dll\Profile.h"\
+	"..\..\H\Dll\Profiledef.h"\
+	"..\..\H\Dll\Volume.h"\
+	"..\..\h\seed\qsl.h"\
+	"..\..\h\seed\qslkey.h"\
+	"..\..\WinAtm\handleocr.h"\
+	"..\..\WinAtm\nhguros.h"\
+	"..\..\WinAtm\nhmwi.h"\
+	"..\..\WinAtm\WinAtmCtl.h"\
+	
+
+.\DevSeed.cpp : \
+	"..\..\H\Common\Class.h"\
+	"..\..\H\Common\ClassInclude.h"\
+	"..\..\H\Common\ClassPointer.h"\
+	"..\..\H\Common\CmnLib.h"\
+	"..\..\H\Common\CmnLibIn.h"\
+	"..\..\H\Common\ConstDef.h"\
+	"..\..\H\Common\Define.h"\
+	"..\..\H\Dll\Dcpram4ATM.h"\
+	"..\..\H\Dll\DevCmn.h"\
+	"..\..\H\Dll\DevEtc.h"\
+	"..\..\H\Dll\DevICCard.h"\
+	"..\..\H\Dll\DevSeed.h"\
+	"..\..\H\Dll\HostIF.h"\
+	"..\..\h\dll\init_dll.h"\
+	"..\..\H\Dll\IVolume.h"\
+	"..\..\H\Dll\LcpCard.h"\
+	"..\..\H\Dll\Lcpram.h"\
+	"..\..\H\Dll\PciDcpCard.h"\
+	"..\..\H\Dll\Profile.h"\
+	"..\..\H\Dll\Profiledef.h"\
+	"..\..\H\Dll\Volume.h"\
+	"..\..\h\seed\qsl.h"\
+	"..\..\h\seed\qslkey.h"\
+	"..\..\WinAtm\handleocr.h"\
+	"..\..\WinAtm\nhguros.h"\
+	"..\..\WinAtm\nhmwi.h"\
+	"..\..\WinAtm\WinAtmCtl.h"\
+	
+
+.\DevSnd.cpp : \
+	"..\..\H\Builder\TranCtrlProc.h"\
+	"..\..\H\Builder\TranCtrlProc_STA.h"\
+	"..\..\H\Builder\TranFuncProc.h"\
+	"..\..\H\Builder\TranFuncProc_STA.h"\
+	"..\..\H\Builder\TranRetCode.h"\
+	"..\..\H\Builder\TranTranProc.h"\
+	"..\..\H\Common\Class.h"\
+	"..\..\H\Common\ClassInclude.h"\
+	"..\..\H\Common\ClassPointer.h"\
+	"..\..\H\Common\CmnLib.h"\
+	"..\..\H\Common\CmnLibIn.h"\
+	"..\..\H\Common\ConstDef.h"\
+	"..\..\H\Common\Define.h"\
+	"..\..\H\Dll\Dcpram4ATM.h"\
+	"..\..\H\Dll\DevCmn.h"\
+	"..\..\H\Dll\DevEtc.h"\
+	"..\..\H\Dll\DevICCard.h"\
+	"..\..\H\Dll\DevSeed.h"\
+	"..\..\H\Dll\HostIF.h"\
+	"..\..\h\dll\init_dll.h"\
+	"..\..\H\Dll\IVolume.h"\
+	"..\..\H\Dll\LcpCard.h"\
+	"..\..\H\Dll\Lcpram.h"\
+	"..\..\H\Dll\PciDcpCard.h"\
+	"..\..\H\Dll\Profile.h"\
+	"..\..\H\Dll\Profiledef.h"\
+	"..\..\H\Dll\Volume.h"\
+	"..\..\h\seed\qsl.h"\
+	"..\..\h\seed\qslkey.h"\
+	"..\..\H\Tran\TranAjmsProc.h"\
+	"..\..\H\Tran\TranCmn.h"\
+	"..\..\H\Tran\TranCmnEtc.h"\
+	"..\..\H\Tran\TranCmnHost.h"\
+	"..\..\H\Tran\TranCmnMenu.h"\
+	"..\..\H\Tran\TranCmnUser.h"\
+	"..\..\H\Tran\TranDevProc.h"\
+	"..\..\H\Tran\TranHostProc.h"\
+	"..\..\H\Tran\TranInputProc.h"\
+	"..\..\H\Tran\TranKCashProc.h"\
+	"..\..\H\Tran\TranMainProc.h"\
+	"..\..\H\Tran\TranMenuProc.h"\
+	"..\..\H\Tran\TranNmsProc.h"\
+	"..\..\H\Tran\TranOutputProc.h"\
+	"..\..\H\Tran\TranTermProc.h"\
+	"..\..\WinAtm\handleocr.h"\
+	"..\..\WinAtm\nhguros.h"\
+	"..\..\WinAtm\nhmwi.h"\
+	"..\..\WinAtm\WinAtmCtl.h"\
+	
+
+.\DevThread.cpp : \
+	"..\..\H\Common\Class.h"\
+	"..\..\H\Common\ClassPointer.h"\
+	"..\..\H\Common\CmnLib.h"\
+	"..\..\H\Common\CmnLibIn.h"\
+	"..\..\H\Common\ConstDef.h"\
+	"..\..\H\Common\Define.h"\
+	"..\..\H\Dll\DevCmn.h"\
+	"..\..\H\Dll\DevICCard.h"\
+	"..\..\H\Dll\DevSeed.h"\
+	"..\..\h\dll\init_dll.h"\
+	"..\..\H\Dll\Profile.h"\
+	"..\..\H\Dll\Profiledef.h"\
+	"..\..\h\seed\qsl.h"\
+	"..\..\h\seed\qslkey.h"\
+	"..\..\WinAtm\nhmwi.h"\
+	
+
+.\DevUtil.cpp : \
+	"..\..\H\Builder\TranCtrlProc.h"\
+	"..\..\H\Builder\TranCtrlProc_STA.h"\
+	"..\..\H\Builder\TranFuncProc.h"\
+	"..\..\H\Builder\TranFuncProc_STA.h"\
+	"..\..\H\Builder\TranRetCode.h"\
+	"..\..\H\Builder\TranTranProc.h"\
+	"..\..\H\Common\Class.h"\
+	"..\..\H\Common\ClassInclude.h"\
+	"..\..\H\Common\ClassPointer.h"\
+	"..\..\H\Common\CmnLib.h"\
+	"..\..\H\Common\CmnLibIn.h"\
+	"..\..\H\Common\ConstDef.h"\
+	"..\..\H\Common\Define.h"\
+	"..\..\H\Dll\Dcpram4ATM.h"\
+	"..\..\H\Dll\DevCmn.h"\
+	"..\..\H\Dll\DevEtc.h"\
+	"..\..\H\Dll\DevICCard.h"\
+	"..\..\H\Dll\DevSeed.h"\
+	"..\..\H\Dll\HostIF.h"\
+	"..\..\h\dll\init_dll.h"\
+	"..\..\H\Dll\IVolume.h"\
+	"..\..\H\Dll\LcpCard.h"\
+	"..\..\H\Dll\Lcpram.h"\
+	"..\..\H\Dll\PciDcpCard.h"\
+	"..\..\H\Dll\Profile.h"\
+	"..\..\H\Dll\Profiledef.h"\
+	"..\..\H\Dll\Volume.h"\
+	"..\..\h\seed\qsl.h"\
+	"..\..\h\seed\qslkey.h"\
+	"..\..\H\Tran\TranAjmsProc.h"\
+	"..\..\H\Tran\TranCmn.h"\
+	"..\..\H\Tran\TranCmnEtc.h"\
+	"..\..\H\Tran\TranCmnHost.h"\
+	"..\..\H\Tran\TranCmnMenu.h"\
+	"..\..\H\Tran\TranCmnUser.h"\
+	"..\..\H\Tran\TranDevProc.h"\
+	"..\..\H\Tran\TranHostProc.h"\
+	"..\..\H\Tran\TranInputProc.h"\
+	"..\..\H\Tran\TranKCashProc.h"\
+	"..\..\H\Tran\TranMainProc.h"\
+	"..\..\H\Tran\TranMenuProc.h"\
+	"..\..\H\Tran\TranNmsProc.h"\
+	"..\..\H\Tran\TranOutputProc.h"\
+	"..\..\H\Tran\TranTermProc.h"\
+	"..\..\WinAtm\handleocr.h"\
+	"..\..\WinAtm\nhguros.h"\
+	"..\..\WinAtm\nhmwi.h"\
+	"..\..\WinAtm\WinAtmCtl.h"\
+	
+
+.\EventQue.cpp : \
+	"..\..\H\Common\CmnLib.h"\
+	"..\..\H\Common\CmnLibIn.h"\
+	"..\..\H\Common\Define.h"\
+	"..\..\h\dll\eventque.h"\
+	
+
+..\..\WinAtm\nhmwi.cpp : \
+	"..\..\WinAtm\nhmwi.h"\
+	
+
+.\StdAfx.cpp : \
+	"..\..\..\..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	".\StdAfx.h"\
+	

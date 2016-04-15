@@ -1,0 +1,6 @@
+; ProCtrl.def : Declares the module parameters for the DLL.
+
+LIBRARY      "ProCtrl"
+DESCRIPTION  'ProCtrl Windows Dynamic Link Library'
+
+EXPORTS

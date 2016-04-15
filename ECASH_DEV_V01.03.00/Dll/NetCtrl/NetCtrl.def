@@ -1,0 +1,6 @@
+; NetCtrl.def : Declares the module parameters for the DLL.
+
+LIBRARY      "NetCtrl"
+DESCRIPTION  'NetCtrl Windows Dynamic Link Library'
+
+EXPORTS

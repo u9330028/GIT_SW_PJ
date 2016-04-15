@@ -1,0 +1,6 @@
+; VolCtrl.def : Declares the module parameters for the DLL.
+
+LIBRARY      "VolCtrl"
+DESCRIPTION  'VolCtrl Windows Dynamic Link Library'
+
+EXPORTS

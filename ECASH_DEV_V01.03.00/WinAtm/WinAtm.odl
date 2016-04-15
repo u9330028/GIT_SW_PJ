@@ -1,0 +1,57 @@
+// WinAtm.odl : type library source for ActiveX Control project.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(3E12689F-7C43-48EF-9A63-832C9A693471), version(1.0),
+  helpfile("WinAtm.hlp"),
+  helpstring("WinAtm ActiveX Control module"),
+  control ]
+library WINATMLib
+{
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	[ uuid(0EF0057B-458A-4D2F-A56C-5167EE339016),
+	  helpstring("Dispatch interface for WinAtm Control"), hidden ]
+	dispinterface _DWinAtm
+	{
+		properties:
+			//{{AFX_ODL_PROP(CWinAtmCtrl)
+			//}}AFX_ODL_PROP
+
+		methods:
+			//{{AFX_ODL_METHOD(CWinAtmCtrl)
+			[id(1)] long AtmStart();
+			[id(2)] long TraceDump(BSTR szTraceData);
+			[id(3)] long SetScreenData(BSTR SetScreenDataName, BSTR SetScreenDataValue);
+			//}}AFX_ODL_METHOD
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	[ uuid(CCC22C52-2027-460D-B079-393294C0483A),
+	  helpstring("Event interface for WinAtm Control") ]
+	dispinterface _DWinAtmEvents
+	{
+		properties:
+			//  Event interface has no properties
+
+		methods:
+			//{{AFX_ODL_EVENT(CWinAtmCtrl)
+			[id(1)] void OnDisplayData(BSTR szDataName, BSTR szDataValue);
+			//}}AFX_ODL_EVENT
+	};
+
+	[ uuid(BBA80ECC-EEF0-4E7C-8B5E-FDEEBA568E1D),
+	  helpstring("WinAtm Control"), control ]
+	coclass WinAtm
+	{
+		[default] dispinterface _DWinAtm;
+		[default, source] dispinterface _DWinAtmEvents;
+	};
+
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

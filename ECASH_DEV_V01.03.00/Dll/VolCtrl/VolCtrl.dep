@@ -1,0 +1,19 @@
+# Microsoft Developer Studio Generated Dependency File, included by VolCtrl.mak
+
+.\StdAfx.cpp : \
+	".\StdAfx.h"\
+	
+
+.\VolCtrl.cpp : \
+	".\StdAfx.h"\
+	
+
+.\VolCtrl.rc : \
+	".\res\VolCtrl.rc2"\
+	
+
+.\Volume.cpp : \
+	".\StdAfx.h"\
+	{$(INCLUDE)}"IVolume.h"\
+	{$(INCLUDE)}"Volume.h"\
+	

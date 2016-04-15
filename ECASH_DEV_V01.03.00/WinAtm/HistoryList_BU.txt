@@ -1,0 +1,383 @@
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++
+++ Version Info [Version Up Contents Detail]
+++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+[V05.01.06 F_T1ATM * 2008.07.21 * Desc Kim.Gi.Jin]
+                                * 신한은행 입금 공동망 OPEN 초기 개발 버전 
+                                * T2ATM_MGR 원격관리 기능 
+
+[V05.01.07 F_T1ATM * 2008.11.18 * Desc Kim.Gi.Jin]
+                                * 금융 IC 적용 -> IC Read 우선 Flow Bug 수정 
+                                * 동양종금 암호화 Debug 완료 -> 암호화 방법, 동양조회 기능 개선
+                                * ATMNAME -> NHT1ATM + AtmSerialNum
+                                * 거래 후 조회 Flow 제거 (508.509) 
+                                * 메인화면 001, 002 Swf 변경
+                   * 2008.12.18 * 메인화면 001 (카드선행 -> 화면 On-line Download)
+   
+[V05.01.08 F_T1ATM * 2008.12.24 * Desc Kim.Gi.Jin]
+                   * 2008.11.25 * 우체국 IC (이체 테스트)
+				   * 2008.11.27 * 동양종금 이체 서비스 제외(일반은행 처리)
+				   * 2008.11.27 * 해외카드 Flow 1차 개발 (화면번호 제외 임시작업)
+				   * 2008.12.02 * 다국어,해외카드 명세표 Form 코딩.
+				   * 2008.12.03 * 다국어,해외카드 명세표 선택 없음.
+				   * 2008.12.03 * 다국어선택 -> 이체시 전화사기 문구 없음.
+				   * 2008.12.12 * 암호화 방법 및 키(master,slave) 전문 추가 (0121) T2ATM_MGR (V0002) Up.
+				   * 2008.12.15 * 다국어버전 (영일중 Flag) + 해외카드 기관코드 + 옵션 설정 + 농협,제일 평문 Flag 무시, Default : DeSec =1 .
+                                * 해외카드 Option 처리 Flow (MASTER, VISA, JCBCARD) 최대 10만원
+                                * 대우증권 거래 서비스 추가 (ORG->304)
+	               * 2008.12.24 * 영문문구 추가 (해외카드)
+	               * 2008.12.24 * IC 카드 Flag 원복(테스트 문제 발생, 경남은행 카드 오류!!) + 계좌번호 (Accept.AccountNum) 수정
+				   * 2008.12.31 * IC 카드 비밀번호 Log 제거
+				   * 2009.01.05 * 명세표 자동 복구 Flow 추가(Find Key "Kim.Gi.Jin 0105")
+				   * 2009.01.15 * H/W DES Recovery logic apply to DevCtrl Class
+
+[V05.01.09 F_T1ATM * 2009.02.02 * 무통장 입금 Flow 추가
+                   * 2009.02.05 * 입금 전문 Format Debug 수정
+                   * 2009.02.18 * 입금 전문 무매체 입금 (주민번호전송)
+                   * 2009.03.18 * 입금 버퍼 Clear (Init)
+                   * 2009.06.11 * 증권 Define, CardServiceFlag, 메리츠, 우리증권, 현대캐피탈, etc
+                   * 2009.06.22 * Line_format Send Time : 300 -> 90 Modify
+                   * 2009.06.22 * Icmp_Ping send to check the line when the dataformat send (* Icmp_ping operate the thread when the poll send but the data send not to use thread)
+                   * 2009.06.25 * Foregin Card S/W Des Logic Modfidy to make CardBinno Pinblock Creation "Findkey : 0625"				    
+                   * 2009.06.25 * 현대카드 암호화 Ini Init "FindKey: 0626"
+                   * 2009.06.26 * 이체코드 자리 변경 
+
+**************************************************************************************************************************************************************				     
+                   * 2009.07.24 * IC카드 자리 수 (3자리) 계좌 비교 Debug [V05.01.11], Log Data (계좌정보 제외)
+
+V06.01.01 Mini_ATM * 2009.07.02 * DVR Uint Function implement where DevCtrl Class
+                                * DVR Camera Capture File create when custormer tranation is started by ATM 
+								* OM Mode add Dvr Camera Test page
+
+                   * 2009.07.30 * Loader, Rear : Bg(DIALOG) Viewer Size Adjust
+                   * 2009.08.13 * Loader, Rear Screen SetName Function call
+				   * 2009.08.13 * LocalSimulator Call when LocalMode is set
+				   * 2009.08.13 * DoorStatus send when door opened
+				   * 2009.08.17 * TY "3010 Case: Break" Bug check (Gijin 0817)
+				   * 2009.08.17 * 메리츠증권,한국투자증권 : 248 -> 243 코드 변경
+				                        
+V01.01.03 Mini_ATM * 2009.09.09 * 내부 1,2차 지적사앙 적용
+V01.01.04 Mini_ATM * 2009.09.10 * HBRM 통합판 적용 (HBRM = T2ATM) - Debug 
+V01.01.05 Mini_ATM * 2009.09.17 * T1ATM / T3ATM 현송전문 수정 : "** 0917 Mini" 
+                   * 2009.09.21 * 한국투자증권 (248 -> 243)
+                   * 2009.09.22 * 조회 계좌번호 Display modify
+                   * 2009.09.22 * 입금 최대 100 매 - Flow, 천,오 매수 - 수수료보다 작을 때.
+                   * 2009.09.24 * 자동기 시간 설정 (일자 변경).
+
+V01.01.06 Mini_ATM * 2009.10.05 * 하나투자증권 (출금,조회), 우리투자증권, 삼성증권 (츨금,조회)
+                   * 2009.10.05 * 삼성투자증권(암호화적용, 암호화, 복호화), 동양종금 IC 이체 거래 실행.
+                   * 2009.10.05 * MCR Embossing Option Set = "Emboss"=dword:00000000, [HKEY_LOCAL_MACHINE\SOFTWARE\ATM\DevInfo\IDC] "미수취대책"
+                   * 2009.10.05 * SamsungStock Spec 0917 Jin Spec, Samsung IC Tran Avail
+                   * 2009.10.05 * 한국투자증권 (248 -> 243)
+                   * 2009.10.05 * 조회 화면 계좌번호 수정.
+                   * 2009.10.05 * 삼성증권 (006 -> 029)
+                   * 2009.10.05 * T1 집계표 수정 
+                   * 2009.10.08 * 증권 조회 IC Flow 추가, 동양,현대캐피탈,하나 암호화 방법 정리  
+				   * 2009.10.09 * SamSung IC "C1" Tag Ignore 0917 
+
+V02.01.02 Mini_ATM * ATM 소스통함.
+
+
+V02.01.03 Mini_ATM * 2009.10.22 * 한국투자증권(출금,조회), 미래에셋(출금,조회)
+                   * 2009.10.23 * 고객대기(ATM_CUSTOM) + 고객거래(ATM_TRAN) => 장애전문 송신 FindKey "ATM_CUSTOM 장애전송")
+                   * 2009.10.26 * IC Read Fail 時 MS Double Check Remove for error clear
+                   * 2009.10.28 * 명세표 인자 항목 변경(증권사)
+                   * 2009.10.29 * 한화투자증권 암호화 적용 (가상계좌 적용)
+                   * 2009.11.02 * 한국증권 IC
+                   * 2009.11.03 * SWF(별도) 매체작성 필수					
+                   * 2009.11.05 * 별도 Compile (T1 V02.00.03)			
+                   * 2009.11.09 * 상호저축 (개별망) 변경.			
+V02.M1.03 Mini_ATM * 2009.11.13 * 금융IC외 IC Read Error 처리 (FindKey:  "11/13 IC 제외")		
+V02.M1.03 Mini_ATM * 2009.11.17 * 한국증권가상계좌 제외 (MS)
+V02.C2.03 Mini_ATM * 2009.11.20 * Kim 11/20 인증서IC 포함 예외처리 (IC처리 Flow)
+V02.C3.03 Mini_ATM * 2009.11.26 * Kim T1,CATM 통합 Compile Option[T1ATM_MODE, T3ATM_MODE]
+V02.C4.03 Mini_ATM * 2009.11.30 * Kim T1,CATM 신한증권 가상계좌 재 점검 
+V02.C4.03 Mini_ATM * 2009.12.9  * 5만원권 입금 가능 지원 [잔액부 수정] -> 권종 입금.
+
+V02.C4.04 Mini_ATM * 2009.12.23 * KIM GI JIN Fifity Apply Tmp 대책 (2009.12.23)
+V02.C4.04 Mini_ATM * 2009.12.30 * 신한금융투자증권 (IC + 계좌체크 Logic)
+ 
+V02.C4.04 Mini_ATM * 2010.01.04 * 입금업무(CMS), [오만,오천,천]잔액 업무 진행  
+V02.C4.04 Mini_ATM * 2010.01.04 * 회수금액 Reject Box (갯수만 올려줌)
+V02.C4.04 Mini_ATM * 2010.01.11 * 매출금입금  Flow 진행 1차 
+		
+V02.C0.05 Mini_ATM * 2010.01.25 * 공장 매체 작성 (오만원권, SP + MWI) 
+V02.C0.05 Mini_ATM * 2010.01.25 * VDM 적용, 상하단부 "문열림"
+V02.C0.05 Mini_ATM * 2010.01.25 * REAL MODE 단체테스트(SBRM_VDM.exe) 제거 -- 시제_문제 
+
+V02.C1.05 Mini_ATM * 2010.02.08 * 지문인식, 잠금장치, 충격센서
+V02.C2.05 Mini_ATM * 2010.02.18 * 하나대투증권, 입금계좌성명(수취인명) 변경
+V02.C3.05 Mini_ATM * 2010.02.18 * 입금계좌성명(수취인명) m_RXATM1061.depositreslist[16+40] -> m_RXATM1061.depositreslist[0] 변경
+V02.C3.05 Mini_ATM * 2010.02.26 * JLN (T2 Define Not use)
+V02.C3.05 Mini_ATM * 2010.03.05 * T2ATM Use (계원모드 수정)
+
+V02.C3.06 Mini_ATM * 2010.03.19 * 동양브랜드 ATM (입금) + 무매체 입금 
+V02.C3.06 Mini_ATM * 2010.03.23 * 매출금입금 - 명세표 인자
+V02.C3.06 Mini_ATM * 2010.03.25 * T2ATM REBOOT Control (T2ATM 새벽 리부팅 중지!!)
+
+V02.C3.06 Mini_ATM * 2010.04.07 * RPC Ctrl function is adding
+V02.C3.06 Mini_ATM * 2010.04.13 * MS + 잠금장치 업무 구현
+
+V02.C4.06 Mini_ATM * 2010.04.21 * NH2700 소스 통합 + NHMWI.CPP, NHMWI.H <V10.6.3.0>
+				   * 2010.04.22 * Dip Type (Nh2700) Eject Cmd (QueClear)
+				   * 2010.04.27 * Camera 部 AP 통합 (MCNEX, NAMUGA) -> ATMinside Apply to ATM
+				   * 2010.04.28 * Network Set (ADSL, LGT, KTF)
+				   * 2010.04.28 * NH2700 (Patch CD:B, T1:T, T2:A, CATM:C)
+				   * 2010.05.11 * Log check
+
+V03.C1.07 Mini_ATM * Desc Kim.Gi.Jin]
+                   * 2010.05.12 * 입금, 매출금 입금 전문 변경 (통장부 Data Spec 정의 -> 유준호과장 장애 대책)
+
+
+
+V03.C1.08 Mini_ATM * Desc Kim.Gi.Jin]
+                   * ParseData() -> TCP/IP [ETX] = TCP ERROR Improved, Send ETX 
+                   * 2010.06.10 * Ticket 발권, 현대캐피탈 무 매체(출금,조회)
+                   * 2010.06.11 * 버그 수정 (C-ATM : 잔액)
+                   * 2010.06.14 * 5만원권 초기화 (50K = 0)
+                   * 2010.06.23 * SEND Length bug                                           : 버그수정
+                   * 2010.06.30 * _SCR_DIR (C:\\T1ATM\\APP\\SWF\\)                          : Full Path 
+                   * 2010.07.08 * 신한우리투자증권 가상계좌 거래 불가                       : 수정요청     (안기삼) 
+                   * 2010.07.13 * 명세표장애 유,무 -> 사용불가 문구 DISPLAY                 : 요청사항 수정(상황실)  
+                   * 2010.07.14 * 화면:205,206 입력 화면 통합 (화면 입력)                   : 통합화면 수정 
+
+V03.C2.08 Mini_ATM * Desc Kim.Gi.Jin]
+                   * 2010.07.21 * T2ATM (5만원권) 입금 時 잔액 계산 (1*10000) -> (1*50000)  : 버그수정 (FindKey : "T2ATM Only 2010.07.21")   
+                   * 2010.07.26 * IC Read Step1(fnAPD_FICDistinctCardType, fnAPD_FICBasicInquiry)  
+				                                                                            : IC Step (FindKey : "//Kim.Gi.Jin 0726")    
+
+                   * 2010.07.26 * fnCMR_GetHandCameraDeviceStatus Check (OpMode)            : FindKey : "//Kim.Gi.Jin 0726"                          
+                   * 2010.07.26 * fnAPP_MiniATM_SumPrint1                                   : 버그수정 FindKey : "//Kim.Gi.Jin 0726"  
+				   
+V03.C2.09 Mini_ATM * Desc Kim.Gi.Jin]
+                   * 2010.08.10 * H-CDU 시범운영 미수취 대책                                : FindKey : "#0001 Kim.Gi.Jin"
+                   * 2010.08.19 * IC 속도 계선				                                : FindKey : "#0002 Kim.Gi.Jin"
+                   * 2010.08.25 * BRM fnBRM_GetCSMNoteStatus (Not Use)                      : FindKey : "#0003 Kim.Gi.Jin"
+				                           
+V04.C2.09 TCD/ATM  * Desc Kim.Gi.Jin]
+                   * 2010.08.25 * Total Ap(T1,T2,U3100,U8100,Mx2800)                        : FindKey : "#0004 Kim.Gi.Jin" NH2800
+                   * 2010.09.03 * personal authentification                                 : FindKey : "#0005 Kim.Gi.Jin" NH2800
+                                * fnAPL_CaptureFaceAuthLockDoorOpen(11 ~ 19 : Error Capture, 21 ~ 29 : Normal Capture)
+                   * 2010.09.06 * Face capture when the door is opened, Reboot bug          : FindKey : "#0006, #0007, #0008" Kim.Gi.Jin" NH2800
+                   * 2010.09.07 * Receipt Print Form modify, Finger print (Om)              : Spec
+                   * 2010.09.08 * VanCDIII IC Process speed improve                         : FindKey : "#0009
+                   * 2010.09.09 * CD-Guard (WinLogin.exe) RegSet(Reg = Winlock)             : FindKey : "#0010
+V04.C2.10 TCD/ATM  * 2010.09.10 * "[상황실: 080 - 920 - 2220] 문의하여 주십시오"            : Spec modify
+				   * 2010.09.10 * HAHSBANKID (269) = 한화증권 IC 거래                       : Spec
+				   * 2010.09.13 * Finger Print Option (Use, Not Use)                        : Spec    : "#0011 
+				   * 2010.09.14 * 매출금입금(입금회차)                                      : Debug   : "#0012 
+				   * 2010.09.14 * Auth card check logic                                     : Spec    : "#0013 
+				   * 2010.09.15 * T2ATM CFMonitor (광고 Avi Display) 수정                   : Debug   : "#0014 
+ 
+
+V04.C2.11 TCD/ATM  * 2010.10.1 * Ticket 발권 Break (Miss) - C-ATM, MX2800                   : Debug   : "#0015 
+V04.C3.11 TCD/ATM  * 2010.10.4 * LocalMode set amt, Camerahand don't use  Mx2800            : Debug   : "#0016 
+                   * 2010.10.6 * Rebooting when atmmode is status downed  Mx2800            : Debug   : "#0017 
+                   * 2010.10.6 * Device09 -> Device9 (Modem Setting)      Mx2800            : Debug   : "#0017 
+                   * 2010.10.6 * RestartProcess -> K_10_WAIT -> K_3_WAIT, Ticket Debug		: Debug   : "#0018 
+*** *** *** *** **** 부가서비스 *** 개발 *** 진행 *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** 
+V04.C4.11 TCD/ATM  * 2010.10.19 * CDU 매수 설정 Bug 수정 (Ini 설정과 메소드 설정 중복)   	: Debug   : "#0019
+                   * 2010.10.28 * 외한은행 (50만원) 					                    : Spec    : "#0020 
+                   * 2010.10.28 * 대신증권 은행연계계좌 조건 변경 		                    : Spec    : "#0022
+                   * 2010.10.28 * 경남,대구,대신 IC Open           		                    : Spec    : "#0023
+				   * 2010.10.28 * 편의점+BranCD 설정 Ini(ETCDevice19,ETCDevice20)           : Spec    : "#0024  
+				    
+V04.C0.12 TCD/ATM  * 2010.11.09 * 부가서비스 (CashBag, 지로/공과금), NHMWI.OCX
+				   * 2010.11.09 * 메인화면 분기 = T1,T2,U8100 = ScrNum[1,2] * C-ATM = ScrNum[3,4] * NH2800 = ScrNum[5,6] : Spec : "#0025 
+				   * 2010.11.09 * 지로공과금 예외처리                                       :Spec     : "#0026 
+				   * 2010.11.09 * 농협IC 예외처리                                           :Spec     : "#0027
+				   * 2010.11.15 * Main Swf (광고 Display)                                   :Spec     : "#0028
+V04.C1.12 TCD/ATM  * 2010.11.17 * Card Eject Timeout (5 -> 15 Sec)                          :Spec     : "#0029
+V04.C2.12 TCD/ATM  * 2010.11.29 * 은행,증권 조회 (증권가상계좌)                             :Debug    : "#0030
+				   * 2010.11.29 * 기종별 Version Display Patch T1:"T", T2:"A", MX2800:"B"   :Spec     : "#0031
+				   * 2010.12.01 * 새벽 리부팅 시간 분할 현재분/기기코드뒷자리(2Byte)        :Spec     : "#0032
+V04.C3.12 TCD/ATM  * 2010.12.01 * T1,T2,C-ATM 제휴업무 (Everyday)                           :Debug    : "#0033
+
+V04.C4.12 TCD/ATM  * 2010.12.13 * MX2800 -> 지문인식 버그 수정 ( NBioBSP.dll )                        : MX2800
+
+
+V04.C4.13 TCD/ATM  * 2010.12.14 * T1,T2,MX2800 CaptureSaveEnd (사진 미 저장)                :Debug    : "#0034
+                   * 2010.12.14 * Cashbag Timeout 30 -> 10 Sec                 
+
+V04.C0.14 TCD/ATM  * 2010.12.20 * 현대증권 IC 추가, 우체국(이체 : IC)                       :Spec     : "#0035                
+                   * 2010.12.21 * 삼성증권 가상계좌 암호화 분기 변경                        :Spec     : "#0036 
+                   * 2010.12.22 * 증권사 암호화 방법 등록                                   :Spec     : "#0037 
+                   * 2010.12.27 * 농협 브랜드 수취 계좌                                     :Debug 
+                   * 2010.12.27 * MX2800 Shutter EPversion                                  :Spec     : "#0038 
+				   * 2010.12.29 * 현대캐피탈 (개월수 화면 제거)                                       
+				   * 2010.12.31 * 현대카드론, 결제계좌이체, 서비스이체                                       
+				   * 2011.01.04 * OKCASHBAG => Disable(T1,T2,CATM)                          :Spec     : "#0039                                       
+				   * 2011.01.04 * 장애 인증대기 화면(701, "454545")개선                     :Spec     :                                        
+				   * 2011.01.04 * 카드 사용 불가의 경우 IC카드 버튼을 사용 안내 문구 추가 [MX2800]                                     
+				   * 2011.01.06 * Brand Type, Network Type [MX2800] 개국전문 전송                                    
+			       * 2011.01.10 * 명세표장애 時 입금/이체 거래 가능                         :Spec     : "#0040
+			       * 2011.01.11 * 충격검지 時 사진 촬영 5 Cut Capture                       :Spec     : "#0041      
+			       * 2011.01.25 * MobilePhone Number                                        :Spec     : "#0042
+V04.C3.14 TCD/ATM  * 2011.02.10 * 공장매체 작성 **************************************************************                
+			       * 2011.02.22 * 전북은행IC, Citi-Brand                                    :Spec     : "#0043
+			       * 2011.02.24 * 광주카드 암호화 지원 (서비스출금,조회,이체)               :Spec     : "#0044  Kim.Gi.Jin
+			       * 2011.02.28 * 현대캐피탈샵 (IC,MS:안내문구 변경)                        :Spec     : "#0054  Kim.Gi.Jin
+			       * 2011.02.28 * U8100 Type => "U"                                         :Spec     : "#0055  Kim.Gi.Jin
+			       * 2011.03.02 * U8100,T1,T2 Type =>계원모드(통신설정, 브랜드|편의점설정)  :Spec     : "#0056  Kim.Gi.Jin
+			       * 2011.03.02 * T3ClerkCtrl.Cpp 수정                                      :Spec     : "#0056  Kim.Gi.Jin
+			       * 2011.03.07 * MASTER CARD 암호화 방법 수정                              :Spec     : "#0057  Kim.Gi.Jin
+			       * 2011.03.08 * 개국전문 PhoneNumber 버그 수정 (4 ->14 Byte)              :Debug
+V04.C0.15 TCD/ATM  * 2011.03.09 * U8100 네트워크설정 정보 별도 처리                         :Debug    : "#0058
+[Kim.Gi.Jin 0310]  * 2011.03.10 * ScrNum = "701" 화면 최소버튼 설정 (현대캐피탈 전용삽)     :Spec     : "#0059
+                   * 2011.03.10 * System 이관 -> VPN 설정 변경 (ATM_ID)                     :         : "#0059
+V04.C1.15 TCD/ATM  * 2011.03.15 * 부가업무 (삼성,롯데,신한) 카드론 업무 적용                :Debug
+
+******************** [V04.00.16] Kim.Gi.Jin ******************************************************************************
+
+V04.00.16 TCD/ATM  * 2011.03.21 * CD/ATM 거래망 통합 IP 설정 건 (농협 429.swf)              :Spec     : "#0060" Kim.Gi.Jin
+                                * 계원모드 서버 IP 입력 시 Reg 확인 
+								* 현대캐피탈 주민번호입력 조회 화면 분기 (760.swf, 720.swf) :Debug    : "#0061" Kim.Gi.Jin
+								* 제주브랜드 50 만원                                        :Spec     : "#0061" Kim.Gi.Jin
+				   * 2011.03.21 * 신한카드,현대카드 출금한도 설정 : 50 만원                 :Debug    : "#0062" Kim.Gi.Jin
+
+
+V04.01.17 TCD/ATM  * 2011.04.05 * Ticket 발권 (GS,FM : Enable)                              :Spec     : "#0063" Kim.Gi.Jin
+                   * 2011.04.07 * 자동기관리번호 (상황실요청), swf : 701                    :Spec     : "#0064" Kim.Gi.Jin
+                   * 2011.04.11 * (NH -> NETWORK.BranchNum[6])                              :Debug    : "#0065" Kim.Gi.Jin
+                   * 2011.04.12 * VISA,MASTER,JCB(10만), 문자기기번호(계원모드화면:905.swf) :Debug    : "#0066" Kim.Gi.Jin
+
+
+
+******************** [V04.00.17] Kim.Gi.Jin ******************************************************************************
+******************** [V05.00.17] Kim.Gi.Jin ******************************************************************************
+******************** [V05.00.18] Kim.Gi.Jin ******************************************************************************
+
+V05.00.18 TCD/ATM  * 2011.04.19 * DEV_ICM Van-CDII (IC = Omron Dip : MS = Swipe)            :Spec     : "#0067" Kim.Gi.Jin
+V05.00.18 TCD/ATM  * 2011.05.10 * DEV_ICM Van-CDII (IC = Omron Dip : MS = Swipe)            :Spec     : "#0067" Kim.Gi.Jin
+				   * 2011.05.19 * WithAvail Status Send                                     :Spec     : "#0068" Kim.Gi.Jin
+				   * 2011.05.24 * Van-CD - Omron Dip IC when Custom Mode check Mediastatus  :Spec     : "#0069" Kim.Gi.Jin
+				   * 2011.05.25 * Swipe, Dip 동시 불가 처리                                 :Spec     : "#0070" Kim.Gi.Jin
+				   * 2011.06.07 * Spack DevStatus Check                                     :Spec     : "#0071" Kim.Gi.Jin
+				   * 2011.06.13 * 출금 거래는 화면 = 최대방출금액(신용카드 "302.swf)        :Spec     : "#0072" Kim.Gi.Jin
+				   * 2011.06.16 * TCP Socket Debug Logic                                    :Debug    : "#0073" Kim.Gi.Jin
+V05.00.19 TCD/ATM  * 2011.06.17 * 국민은행 입금 로직                                        :Debug    : "#0074" Kim.Gi.Jin
+
+==============================================================================================================================================================================                 
+변경일자: 2011. 07. 14  ** 매체 이력 **                                                                   
+작 성 자: 김기진[C-ATM] ** 적용 이력 -- T1+CATM+U8100+T2+MX2800+VANCD Src Integrated                                                                         
+==============================================================================================================================================================================
+V05.01.20 TCD/ATM  * 2011.07.01 * DEV_ICM Van-CDII (IC = Omron Dip : MS = Swipe)
+V05.01.20 TCD/ATM  * 2011.07.14 * Spack Property add                                        :Debug    : "#0075" Kim.Gi.Jin
+                                * NHAlert4SPackX.ocx, NHAlert4SPackX.h
+                                * Exe = GOMA T2ATM_MGR.exe
+V05.01.20 TCD/ATM  * 2011.07.15 * 인증 (KEY Event = ENTER,CANCEL,ETC) 제외 (T3ATM 제외)     :Debug    : "#0076" Kim.Gi.Jin
+
+V05.02.20 TCD/ATM  * 2011.07.18 * 인증절차 (Offline, Online -> Card 인증(Alarm Off))        :Debug    : "#0077" Kim.Gi.Jin
+			       * 2011.07.18 * Spack 예외처리(알람->Off/On->상태)                        :Debug    : "#0078" Kim.Gi.Jin
+V05.03.20 TCD/ATM  * 2011.07.25 * 인증절차 (Alarm Off 예외처리)                             :Debug    : "#0079" Kim.Gi.Jin
+
+V05.04.20 TCD/ATM  * 2011.08.02 * VanCD IC (Omron Dip) Disable                              :Debug    : "#0080" Kim.Gi.Jin
+V05.05.20 TCD/ATM  * 2011.08.04 * 새벽시간(ATM_ERROR) Rebooting, Line Off Reboot Cnt 개선   :Debug    : "#0081" Kim.Gi.Jin
+V05.05.20 TCD/ATM  * 2011.08.10 * VanCDI 메인화면(7,8.swf), 신용카드(826.swf), Swipe+Dip    :Debug    : "#0082" Kim.Gi.Jin
+V05.05.20 TCD/ATM  * 2011.08.11 * 충격장치 업무개선  예외처리(Alarm Off 외부센서 = 0 경우)  :Debug    : "#0083" Kim.Gi.Jin
+V05.05.20 TCD/ATM  * 2011.08.12 * VANCDI,II IC Button 선행 Logic                            :Debug    : "#0084" Kim.Gi.Jin
+V05.05.20 TCD/ATM  * 2011.08.12 * Van-CD 통합 (Device.ini), WithAvail Status Send           :Debug    : "#0085" Kim.Gi.Jin
+V05.05.20 TCD/ATM  * 2011.08.18 * IC CARD 거래 모두 송신(서버에서 에러 수신)                :Debug    : "#0086" Kim.Gi.Jin
+V05.05.21 TCD/ATM  * 2011.08.18 * VanCD-MS CARD (IC Disable Flag), CARD Check Logic			:Debug    : "#0087" Kim.Gi.Jin
+V05.05.21 TCD/ATM  * 2011.08.23 * IC Read Speed up                                   		:Debug    : "#0088" Kim.Gi.Jin
+V05.05.21 TCD/ATM  * 2011.08.24 * IC 카드선행 임시처리(IC 우선처리->MS : SP 문제로 주석처리):Spec     : "#9999" Kim.Gi.Jin
+V05.05.21 TCD/ATM  * 2011.08.24 * 기업은행브랜드(입금-암호화) Card Entering 화면(881.swf)   :Spec     : "#0089" Kim.Gi.Jin
+V05.05.21 TCD/ATM  * 2011.08.29 * Card Type (Omron, SanKyo)                                 :Spec     : "#0090" Kim.Gi.Jin
+V05.05.21 TCD/ATM  * 2011.08.31 * Tran start - Card Exist Info check                        :Spec     : "#0091" Kim.Gi.Jin
+V05.05.21 TCD/ATM  * 2011.09.01 * DEV(CD/ATM : Pinpad) 구분                                 :Spec     : "#0092" Kim.Gi.Jin
+V05.05.21 TCD/ATM  * 2011.09.01 * CitiBrand Inquiry list Option(citi)                       :Spec     : "#0093" Kim.Gi.Jin
+V05.06.21 TCD/ATM  * 2011.09.07 * Sankyo Dip Card Exist ignore (Card Out Timeout = 1800 Sec):Spec     : "#0094" Kim.Gi.Jin
+V05.06.21 TCD/ATM  * 2011.09.07 * Ticket block img display                                  :Spec     : "#0095" Kim.Gi.Jin
+
+V05.00.22 TCD/ATM  * 2011.09.08 * Kiup Brand 입금(암호화 방법) 수정, BranchNum("VC")        :Spec     : "#0096" Kim.Gi.Jin
+
+V05.01.22 TCD/ATM  * 2011.09.20 * Dip Omron (IC) Reject Ready  (VANCDI), Pinpad Ready       :Spec     : "#0097" Kim.Gi.Jin
+V05.01.22 TCD/ATM  * 2011.09.21 * VanCD DCP (SBC B/D) Pinpad [CANCEL Exception]             :Spec     : "#0098" Kim.Gi.Jin
+                                * MachineMakeNum (VanCDI)                                   :Spec     : "#0098" Kim.Gi.Jin
+
+V05.01.22 TCD/ATM  * 2011.09.26 * Motor Type[C-ATM,T1,T2,U8100] IC Read Retry 무시          :Bug      : "#0099" Kim.Gi.Jin
+
+V05.00.23 TCD/ATM  * 2011.09.27 * T-DES Logic 구현 (주석처리)                               :Spec     : "#0100" Kim.Gi.Jin
+V05.00.23 TCD/ATM  * 2011.09.30 * 단체테스트 처리 RPC disable                               :Spec     : "#0101" Kim.Gi.Jin
+V05.00.23 TCD/ATM  * 2011.10.04 * CDU Initialize -> VanCDI(Door) 대책                       :Bug      : "#0101" Kim.Gi.Jin
+V05.01.23 TCD/ATM  * 2011.10.04 * IC Card Only Entering Ready                               :Bug      : "#0102" Kim.Gi.Jin
+
+V05.04.23 TCD/ATM  * 리부팅 시간 (5시 ~ 6시) 변경                                           :요청사항 : "#0103" Kim.Gi.Jin
+V05.04.23 TCD/ATM  * 2011.10.10 * 메인대기 카드 상태 미 점점 (#0091) 수정(장애개선)         :Bug      : "#0104" Kim.Gi.Jin
+
+*** V05.04.23 -> 최종 버전으로 수정 함[U3100K - BRM21] 통합 개발 ** ** ** ** ** ** ** ** ** ** 
+
+V05.00.25 TCD/ATM  * 2011.10.25 * 해외카드 (수수료 조회 :VISA, MASTER, JCB)                 :Spec     : "#0105" Kim.Gi.Jin
+                   * 2011.10.25 * 기기코드(NH:U3100K), 지문인증 -> 카드방출                 :Spec     : "#0106" Kim.Gi.Jin
+                   * 2011.10.25 * 카메라 테스트 (NH:U3100K)                                 :Spec     : "#0106" Kim.Gi.Jin
+                   * 2011.10.27 * 기기코드 설정 (Ex->NH0001)                                :Spec     : "#0107" Kim.Gi.Jin
+                   * 2011.10.31 * 금액설정 (LocalMode), BRM-위권모드 설정 (U3100K)          :Spec     : "#0108" Kim.Gi.Jin
+                   * 2011.11.01 * T1,T2,C-ATM(계원모드 설정) 업무 추가  - 재 설정           :Spec     : "#0109" Kim.Gi.Jin
+				   * 2011.11.02 * 한국투자증권 (이체)                                       :Spec     : "#0110" Kim.Gi.Jin
+
+*** V05.00.25 -> 인터렉티브광고, 모바일게임 다운로드 서비스 통합, 브랜드광고  ** ** ** ** ** ** ** ** ** ** 
+
+V05.00.25 ALL      * 2011.11.02 * 통신장애 개선(Retry : 180 초 -> 120 초), 90초 -> 60초 Polling       : "#0110" Kim.Gi.Jin
+				   * 2011.11.07 * 기종별 장치화면 변경 (T1A,T2A,U81,U31,U3K,VAN,M28)                  : "#0111" Kim.Gi.Jin
+				   * 2011.11.08 * 동양종금 명칭 변경 -> 동양증권                                      :
+				   * 2011.11.08 * 계원모드 장애코드 변경                                              : "#0112" Kim.Gi.Jin
+ 				   * 2011.11.08 * 최대입금 매수 설정 (U3100K : 100매)                                 : "#0112" Kim.Gi.Jin
+ 				   * 2011.11.16 * 공장 로컬 모드 초기 값 (0원 설정)                                   : 
+
+V05.02.25 ALL      * 2011.11.25 * RunTime Error (발생오류) 수정                                       : "#0113" Kim.Gi.Jin
+                   * 2011.11.25 * "979D277" 장애 전송 수정, 메인화면 통합                             : "#0114" Kim.Gi.Jin
+V05.03.25 ALL      * 2011.11.29 * RunTime Error (발생오류) 수정 -> 2차 수정                           : "#0115" Kim.Gi.Jin
+                               
+V05.04.25 ALL      * 2011.12.05 * TCP VanCD 전환 (지문인식 미사용), U3100K 처리 수정                  : "#0116" Kim.Gi.Jin
+                                * fnLDCtrl_DisableWatchdogRpc() - Logic 수정                          : "#0117" Kim.Gi.Jin
+                                * Speed - Up, T3ATM -> U3100, LocalMode Flag (Ini) 추가               : "#0118" Kim.Gi.Jin
+                                * IDC Ep Version                                                      : "#0119" Kim.Gi.Jin
+
+V05.05.25 ALL      * 2011.12.09 * TCP VanCD 전환처리 시 계원모드 RPC 설정                             : "#0120" Kim.Gi.Jin
+                   * 2011.12.09 * 계원모드 - "||" (예외처리) 설정 , 문구 수정                         : "#0121" Kim.Gi.Jin
+
+V05.06.25 ALL      * 2011.12.12 * VanCD - (Des B/D 설정, AMSHU, KSPR 설정)                            : "#0122" Kim.Gi.Jin
+                   * 2011.12.12 * LGU_Plus GPS ReSet (새벽)                                           : "#0122" Kim.Gi.Jin
+                   * 2011.12.12 * PinPad 장애 개선 (Terminatorkey : Enter -> "")                      : "#0123" Kim.Gi.Jin
+                   * 2011.12.13 * K-Spr (20104:용지 무 대책 - Reset)                                  : "#0124" Kim.Gi.Jin
+
+
+V05.07.25 ALL      * 2011.12.16 * 해외카드 명세표 장애 시 예외처리                                    : "#0125" Kim.Gi.Jin
+
+
+
+V05.08.25 ALL      * 2011.12.19 * Motor IC Type (KMCU : Chip Init 예외처리)=T1,T2,U3100K,U3100,U8100  : "#0126" Kim.Gi.Jin
+                   * 2011.12.19 * 명세표 예외처리 (장애 시) - ALL 기종 대책 - P08  (축퇴처리)         : "#0127" Kim.Gi.Jin
+				   * 2011.12.19 * MS Only 처리 (지로공과금)                                           : "#0127" Kim.Gi.Jin
+
+
+V05.09.25 ALL      * 2011.12.28 * 화면분기 예외처리 (한국버전외)                                      : "#0128" Kim.Gi.Jin
+                   * 2011.12.28 * 제일은행 이체 암호화 방법 변경 건                                   : "#0129" Kim.Gi.Jin
+				   * 2011.12.28 * CDU NotDispense (B/D 교체 필요!!, 설정값 변경) =MX2800, VanCD       : "#0130" Kim.Gi.Jin
+				   * 2011.12.28 * 개국전문 CPU 정보값 수정 (이승태 요청)                              : "#0131" Kim.Gi.Jin
+
+** [VanCD 전환 문제점 개선 버전임] **				  
+V05.0A.25 ALL      * 2012.01.03 * Loader.exe    -> Loader 압축해지 시 Timeout (120초)                 : Kim.Gi.Jin
+                   * 2012.01.03 * T1ATM_MGR.exe -> INITUPDATE (Reg.Bat) 실행 (Loader.exe) Update 이용 : Kim.Gi.Jin
+				   * 2012.01.03 * 브랜드설정 Rebooting 시점 변경 (VanCD 매체 Rebuild)                 : "#0132" Kim.Gi.Jin
+
+
+V05.00.26 ALL      * 2012.01.04 * RestoreBrandFileCopy() File 설정, 거래전문 HEADER 초기화            : "#0133" Kim.Gi.Jin
+                   * 2012.01.05 * 현금수취 화면 변경 (815.swf, 848.swf) => 수취 Timeout = 60초        : "#0134" Kim.Gi.Jin
+                   * 2012.01.06 * 현송금액 설정 (2000 -> 5000) 변경                                   : "#0136" Kim.Gi.Jin
+                   * 2012.01.06 * LG-Uplus (GPS+GSensor) SetIni                                       : "#0137" Kim.Gi.Jin
+                   * 2012.01.10 * IC Flag (DIPIC Read Completed) - 버튼선행 예외처리                  : "#0138" Kim.Gi.Jin
+                   * 2012.01.10 * LG-UPlus Fixed IP Set (192.168.1.10)                                : "#0139" Kim.Gi.Jin
+                   * 2012.01.10 * Reject Full Count 변경 (100 -> 200 : VanCD,Mx2800)                  : "#0140" Kim.Gi.Jin
+V05.02.26 ALL      * 2012.01.10 * 장애발생 명세표 인자 안함                                           : "#0141" Kim.Gi.Jin
+
+V05.03.26 ALL      * 2012.01.12 * IC카드 후 수취 대기 화면(fnMCU_GetMaterialInfo Status Entering 무시): "#0142" Kim.Gi.Jin
+                   * 2012.01.16 * PIN = 0x1000 Flicker Reay MX2800 - 버그 수정                        : "#0143" Kim.Gi.Jin
+                   * 2012.01.18 * 메인화면 PinDisable                                                 : "#0144" Kim.Gi.Jin
+                   * 2012.01.18 * OM_버전인자(Mx2800, U3100K)                                         : "#0145" Kim.Gi.Jin
+                   * 2012.01.19 * 최대 방출 금액 설정 Bug 수정                                        : "#0146" Kim.Gi.Jin
+
+V05.04.26 ALL      * 2012.01.19 * VANCD (Swipe) Type 거래테스트                                       : "#0147" Kim.Gi.Jin
+                   * 2012.01.20 * VANCD CPU (100 %) => Flash (815.848).swf 변경                       : "매체수정" 
+                   * 2012.01.20 * U3100 - Alram 기능 제거 (카드인증시 -> 예외처리)                    : "#0148" Kim.Gi.Jin

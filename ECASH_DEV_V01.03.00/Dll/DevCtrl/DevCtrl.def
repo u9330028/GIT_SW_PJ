@@ -1,0 +1,6 @@
+; DevCtrl.def : Declares the module parameters for the DLL.
+
+LIBRARY      "DevCtrl"
+DESCRIPTION  'DevCtrl Windows Dynamic Link Library'
+
+EXPORTS
