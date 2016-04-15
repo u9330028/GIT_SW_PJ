@@ -1,6 +1,8 @@
 
 public class Character 
 {
+	
+	//Github Mod gijin
 	private float attackPoint;
 	public Elemental elemental;
 	
