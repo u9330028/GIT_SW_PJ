@@ -509,6 +509,7 @@ int CTranCmn::fnAPP_RxECash_GetDataField_AnalProc(int nSec)
 	nTxReturn = fnAPP_TXGetFindArryDataField(x008X, strlen(x008X), strGetTxDataField);
 	nRxReturn = fnAPP_RXGetFindArryDataField(x008X, strlen(x008X), strGetRxDataField);
 
+	//#CS0005
 	if(nRxReturn)
 	{
 		int nIndexMsg = 0;
@@ -659,19 +660,31 @@ int CTranCmn::fnAPP_RxECash_GetDataField_AnalProc(int nSec)
 				{
 					fnAPP_Tran_TxSend2( TRANID_2190, LINE_OPCL_TIME);
 					fnAPP_Tran_RxRecv2( TRANID_2190, LINE_OPCL_TIME);
+				}
 
-					if (m_pDevCmn->fnSCR_GetCurrentLangMode() == KOR_MODE)
-						fnAPP_CancelProc(T_MSG, "[점검중]", "기관간 일시적 전산장애", "잠시 후 다시 거래하여 주시기 바랍니다");
+				if (TranCode2 == TRANID_7200 || TranCode2 == TRANID_4720 || TranCode2 == TRANID_4410 )
+				{
+					if (m_pDevCmn->fnSCR_GetCurrentLangMode() != KOR_MODE)
+						strDisp.Format("[점검중]\n 응답코드:%s\n %s\n", "Transaction is not valid", " Please repeat from the beginning.");	
 					else
-						fnAPP_CancelProc(T_MSG, "Transaction is not valid", "시스템 점검 중 입니다.");
+						strDisp.Format("[점검중]\n 응답코드:%s\n %s\n", "기관간 일시적 전산장애", "잠시 후 다시 거래하여 주시기 바랍니다");	
+
+					m_pDevCmn->fnSCR_DisplayStringArray(1, strDisp,  "\n");
+					m_pDevCmn->fnSCR_DisplayScreen(701);
+					Delay_Msg(3000);
+					fnAPP_CancelDepRejectProc(T_DISMSG, strDisp.GetBuffer(0));
 				}
 				else
+				if (TranCode2 == TRANID_4320 || TranCode2 == TRANID_4340)
 				{
-					TranResultNGCode = nIndexMsg;   
-					fnAPP_CancelProc(T_DISMSG, strDisp.GetBuffer(0));
+					TranResultNGCode = nIndexMsg;
+					return T_OK;
 				}
-
-
+				else
+				if (m_pDevCmn->fnSCR_GetCurrentLangMode() == KOR_MODE)
+					fnAPP_CancelProc(T_MSG, "[점검중]", "기관간 일시적 전산장애", "잠시 후 다시 거래하여 주시기 바랍니다");
+				else
+					fnAPP_CancelProc(T_MSG, "Transaction is not valid", "시스템 점검 중 입니다.");
 			}
 			else
 			if( nIndexMsg == 798 ) 
@@ -679,8 +692,31 @@ int CTranCmn::fnAPP_RxECash_GetDataField_AnalProc(int nSec)
 				TranResultNGCode = nIndexMsg;
 				m_pDevCmn->m_nAtmsCommand = TRAN_MSG_EXCEPTION_798;
 				m_pDevCmn->TranResult = TRUE;
-				fnAPP_CancelProc(T_DISMSG, strDisp.GetBuffer(0));
-				return T_OK;
+
+				//fnAPP_CancelProc(T_DISMSG, strDisp.GetBuffer(0));
+				if (TranCode2 == TRANID_7200 || TranCode2 == TRANID_4720 || TranCode2 == TRANID_4410 )
+				{
+					if (m_pDevCmn->fnSCR_GetCurrentLangMode() != KOR_MODE)
+						strDisp.Format("[점검중]\n 응답코드:%s\n %s\n", "Transaction is not valid", " Please repeat from the beginning.");	
+					else
+						strDisp.Format("[점검중]\n 응답코드:%s\n %s\n", "기관간 일시적 전산장애", "잠시 후 다시 거래하여 주시기 바랍니다");	
+
+					m_pDevCmn->fnSCR_DisplayStringArray(1, strDisp,  "\n");
+					m_pDevCmn->fnSCR_DisplayScreen(701);
+					Delay_Msg(3000);
+					fnAPP_CancelDepRejectProc(T_DISMSG, strDisp.GetBuffer(0));
+				}
+				else
+				if (TranCode2 == TRANID_4320 || TranCode2 == TRANID_4340)
+				{
+					TranResultNGCode = nIndexMsg;
+					return T_OK;
+				}
+				else
+				if (m_pDevCmn->fnSCR_GetCurrentLangMode() == KOR_MODE)
+					fnAPP_CancelProc(T_MSG, "[점검중]", "기관간 일시적 전산장애", "잠시 후 다시 거래하여 주시기 바랍니다");
+				else
+					fnAPP_CancelProc(T_MSG, "Transaction is not valid", "시스템 점검 중 입니다.");
 			}
 			else
 			if(nIndexMsg == 94)
@@ -688,8 +724,31 @@ int CTranCmn::fnAPP_RxECash_GetDataField_AnalProc(int nSec)
 				TranResultNGCode = nIndexMsg;
 				m_pDevCmn->m_nAtmsCommand = TRAN_MSG_EXCEPTION_094;
 				m_pDevCmn->TranResult = TRUE;
-				fnAPP_CancelProc(T_DISMSG, strDisp.GetBuffer(0));
-				return T_OK;
+				//fnAPP_CancelProc(T_DISMSG, strDisp.GetBuffer(0));
+
+				if (TranCode2 == TRANID_7200 || TranCode2 == TRANID_4720 || TranCode2 == TRANID_4410 )
+				{
+					if (m_pDevCmn->fnSCR_GetCurrentLangMode() != KOR_MODE)
+						strDisp.Format("[점검중]\n 응답코드:%s\n %s\n", "Transaction is not valid", " Please repeat from the beginning.");	
+					else
+						strDisp.Format("[점검중]\n 응답코드:%s\n %s\n", "기관간 일시적 전산장애", "잠시 후 다시 거래하여 주시기 바랍니다");	
+
+					m_pDevCmn->fnSCR_DisplayStringArray(1, strDisp,  "\n");
+					m_pDevCmn->fnSCR_DisplayScreen(701);
+					Delay_Msg(3000);
+					fnAPP_CancelDepRejectProc(T_DISMSG, strDisp.GetBuffer(0));
+				}
+				else
+				if (TranCode2 == TRANID_4320 || TranCode2 == TRANID_4340)
+				{
+					TranResultNGCode = nIndexMsg;
+					return T_OK;
+				}
+				else
+				if (m_pDevCmn->fnSCR_GetCurrentLangMode() == KOR_MODE)
+					fnAPP_CancelProc(T_MSG, "[점검중]", "기관간 일시적 전산장애", "잠시 후 다시 거래하여 주시기 바랍니다");
+				else
+					fnAPP_CancelProc(T_MSG, "Transaction is not valid", "시스템 점검 중 입니다.");
 			}
 			else
 			if( nIndexMsg == 845)
@@ -697,8 +756,31 @@ int CTranCmn::fnAPP_RxECash_GetDataField_AnalProc(int nSec)
 				TranResultNGCode = nIndexMsg;
 				m_pDevCmn->m_nAtmsCommand = TRAN_MSG_EXCEPTION_845;
 				m_pDevCmn->TranResult = TRUE;
-				fnAPP_CancelProc(T_DISMSG, strDisp.GetBuffer(0));
-				return T_OK;
+				//fnAPP_CancelProc(T_DISMSG, strDisp.GetBuffer(0));
+
+				if (TranCode2 == TRANID_7200 || TranCode2 == TRANID_4720 || TranCode2 == TRANID_4410 )
+				{
+					if (m_pDevCmn->fnSCR_GetCurrentLangMode() != KOR_MODE)
+						strDisp.Format("[점검중]\n 응답코드:%s\n %s\n", "Transaction is not valid", " Please repeat from the beginning.");	
+					else
+						strDisp.Format("[점검중]\n 응답코드:%s\n %s\n", "기관간 일시적 전산장애", "잠시 후 다시 거래하여 주시기 바랍니다");	
+
+					m_pDevCmn->fnSCR_DisplayStringArray(1, strDisp,  "\n");
+					m_pDevCmn->fnSCR_DisplayScreen(701);
+					Delay_Msg(3000);
+					fnAPP_CancelDepRejectProc(T_DISMSG, strDisp.GetBuffer(0));
+				}
+				else
+				if (TranCode2 == TRANID_4320 || TranCode2 == TRANID_4340)
+				{
+					TranResultNGCode = nIndexMsg;
+					return T_OK;
+				}
+				else
+				if (m_pDevCmn->fnSCR_GetCurrentLangMode() == KOR_MODE)
+					fnAPP_CancelProc(T_MSG, "[점검중]", "기관간 일시적 전산장애", "잠시 후 다시 거래하여 주시기 바랍니다");
+				else
+					fnAPP_CancelProc(T_MSG, "Transaction is not valid", "시스템 점검 중 입니다.");
 			}
 	
 			m_pDevCmn->TranResult = FALSE;
@@ -712,8 +794,10 @@ int CTranCmn::fnAPP_RxECash_GetDataField_AnalProc(int nSec)
 			if(TranCode2 == TRANID_4720 || TranCode2 == TRANID_4410)
 			{
 				TranResultNGCode = nIndexMsg;
-				if(nIndexMsg != 608 && nIndexMsg != 920)
+				if(nIndexMsg != 68 && nIndexMsg != 97)
 					fnAPP_CancelDepRejectProc(T_DISMSG, strDisp.GetBuffer(0));
+				else
+					fnAPP_CancelProc(T_DISMSG, strDisp.GetBuffer(0));
 			}
 			else
 			if(TranCode2 == TRANID_2190)

@@ -21,10 +21,10 @@
 	#define	VERSION				"V01-03-00"					//  
 #endif
 
-	#define	APVERSION			"160331"				
+	#define	APVERSION			"160423"				
 
 #define	REVISION			"R0"						// Version별 Revision관리필요
-#define VERSIONDATE			"20160412"					// 프로그램변경일자
+#define VERSIONDATE			"20160423"					// 프로그램변경일자
 
 
 #define ECASH_LOCALPORT_MODE	20015						// 테스트 서버 용 

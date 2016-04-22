@@ -1298,10 +1298,10 @@ int CWinAtmCtrl::Atm_SW_Control()
 	//ATMInside
 	if (::FindWindow(NULL, "ATMinside") == NULL)
 		WinExec(EXE_ATMINSIDE, SW_HIDE);
-
+/*
 	if (::FindWindow(NULL, "ATM Control Server 0.2") == NULL)
 		WinExec(EXE_FTP_SERVER, SW_HIDE);
-                  
+*/                  
 	return FALSE;
 }
 

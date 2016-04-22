@@ -4576,9 +4576,9 @@ int	CTranCmn::fnAPP_PrintCancel(int PrintDevice, int WaitFlg)
 	if (TranProc == TRAN_DEP)
 	{
 		if (m_pProfile->DEVICE.MachineType == U8100)
-			sprintf(ShuData[0], "    [입금거래취소]");
+			sprintf(ShuData[0], "    [입금거래]"); //#CS0006		[입금거래취소] -> [입금거래]
 		else
-			sprintf(ShuData[0], "        [입금거래취소]"); //#0055 -> #0093
+			sprintf(ShuData[0], "        [입금거래]"); //#0055 -> #0093
 	}
 	else
 	if ((TranCode == TC_JRTRAN)	||
@@ -5411,10 +5411,11 @@ int	CTranCmn::fnAPP_EditPrintLine_Sub_U8100_1(int PrintDevice, void* cData, int 
 		break;
 	case 12:	
 //		Data = GetSprintf("응답코드:%03d[%s]", TranResultNGCode, (TranResultNGCode == 0)	? "정상" : "불능"); 
+
 		if(m_pDevCmn->fnSCR_GetCurrentLangMode() != KOR_MODE)		
 			Data = GetSprintf("  Response:%03d[%s]", TranResultNGCode, (TranResultNGCode == 0)	? "OK" : "NG"); 
 		else
-			Data = GetSprintf("  응답코드:%03d[%s]", TranResultNGCode, (TranResultNGCode == 0)	? "거래정상" : "거래불능"); 
+			Data = GetSprintf("  응답코드:%03d[%s]", TranResultNGCode, (TranResultNGCode == 0)	? "거래정상" : "거래불능");
 		break;
 	case 13:	
 		switch(TranCode2)
@@ -6548,9 +6549,19 @@ int	CTranCmn::fnAPP_EditPrintLine_Sub_T3_1(int PrintDevice, void* cData, int Lin
 		if(m_pDevCmn->fnSCR_GetCurrentLangMode() != KOR_MODE)		
 			Data = GetSprintf("  Response:%03d[%s]", TranResultNGCode, (TranResultNGCode == 0)	? "OK" : "NG"); 
 		else
-			Data = GetSprintf("  응답코드:%03d[%s]", TranResultNGCode, (TranResultNGCode == 0)	? "거래정상" : "거래불능"); 
+			Data = GetSprintf("  응답코드 : %03d", TranResultNGCode);
 		break;
-	case 13:	
+
+	//#CS0006 (거래결과 추가 - 청호요청)
+	case 13:
+		if(m_pDevCmn->fnSCR_GetCurrentLangMode() == KOR_MODE)		
+		{
+			cstrTemp.Format("%03d", TranResultNGCode);
+			if( IniGetStr(_ECASH_SVR_RES_INI, "PRINT_MSG", cstrTemp, SPACE3).GetLength() < 29 )
+				Data = GetSprintf("  거래결과: %s", IniGetStr(_ECASH_SVR_RES_INI, "PRINT_MSG", cstrTemp, SPACE3));
+		}
+		break;
+	case 14:	
 		switch(TranCode2)
 		{
 		case TRANID_4310:
@@ -6626,13 +6637,12 @@ int	CTranCmn::fnAPP_EditPrintLine_Sub_T3_1(int PrintDevice, void* cData, int Lin
 				else
 					Data = GetSprintf("  수수료   : %s원", strCT(Asc2Amt(m_RD.byDataField_024x, strlen(m_RD.byDataField_024x), strlen(m_RD.byDataField_024x)+3).GetBuffer(0), Asc2Amt(m_RD.byDataField_024x, strlen(m_RD.byDataField_024x), strlen(m_RD.byDataField_024x)+3).GetLength()));
 			}
-			/*
-			if(m_pDevCmn->fnSCR_GetCurrentLangMode() != KOR_MODE)
-				Data = GetSprintf("  Fee      : %s Won", strCT(Asc2Amt(m_RD.byDataField_024x, strlen(m_RD.byDataField_024x), strlen(m_RD.byDataField_024x)+3).GetBuffer(0), Asc2Amt(m_RD.byDataField_024x, strlen(m_RD.byDataField_024x), strlen(m_RD.byDataField_024x)+3).GetLength()));
-			else
-				Data = GetSprintf("  수수료   : %s원", strCT(Asc2Amt(m_RD.byDataField_024x, strlen(m_RD.byDataField_024x), strlen(m_RD.byDataField_024x)+3).GetBuffer(0), Asc2Amt(m_RD.byDataField_024x, strlen(m_RD.byDataField_024x), strlen(m_RD.byDataField_024x)+3).GetLength()));
-			*/
-
+			
+			//if(m_pDevCmn->fnSCR_GetCurrentLangMode() != KOR_MODE)
+			//	Data = GetSprintf("  Fee      : %s Won", strCT(Asc2Amt(m_RD.byDataField_024x, strlen(m_RD.byDataField_024x), strlen(m_RD.byDataField_024x)+3).GetBuffer(0), Asc2Amt(m_RD.byDataField_024x, strlen(m_RD.byDataField_024x), strlen(m_RD.byDataField_024x)+3).GetLength()));
+			//else
+			//	Data = GetSprintf("  수수료   : %s원", strCT(Asc2Amt(m_RD.byDataField_024x, strlen(m_RD.byDataField_024x), strlen(m_RD.byDataField_024x)+3).GetBuffer(0), Asc2Amt(m_RD.byDataField_024x, strlen(m_RD.byDataField_024x), strlen(m_RD.byDataField_024x)+3).GetLength()));
+			
 			break;
 		case TRANID_4717:	//#N0270
 		case TRANID_4840:	//#N0266
@@ -6645,7 +6655,7 @@ int	CTranCmn::fnAPP_EditPrintLine_Sub_T3_1(int PrintDevice, void* cData, int Lin
 			break;
 		}		
 		break;
-	case 14:	
+	case 15:	
 		switch(TranCode2)
 		{
 		case TRANID_4310:
@@ -6714,7 +6724,7 @@ int	CTranCmn::fnAPP_EditPrintLine_Sub_T3_1(int PrintDevice, void* cData, int Lin
 			break;
 		}		
 		break;
-	case 15:	
+	case 16:	
 		switch(TranCode2)
 		{
 		case TRANID_4310:
@@ -6762,7 +6772,7 @@ int	CTranCmn::fnAPP_EditPrintLine_Sub_T3_1(int PrintDevice, void* cData, int Lin
 		break;		
 
 
-	case 16:	
+	case 17:	
 		switch(TranCode2)
 		{
 		case TRANID_7260:
@@ -6798,7 +6808,7 @@ int	CTranCmn::fnAPP_EditPrintLine_Sub_T3_1(int PrintDevice, void* cData, int Lin
 		}		
 		break;
 
-	case 17:
+	case 18:
 		switch(TranCode2)
 		{
 		case TRANID_7260:
@@ -6836,13 +6846,13 @@ int	CTranCmn::fnAPP_EditPrintLine_Sub_T3_1(int PrintDevice, void* cData, int Lin
 			if(m_pDevCmn->fnSCR_GetCurrentLangMode() != KOR_MODE) //명세표 내용 수정 오 => 오천
 				Data = GetSprintf("  50K:%d 10K:%d 5K:%d 1K:%d", CashData.mFiftyThousand, CashData.mTenThousand, CashData.mFiveThousand, CashData.mOneThousand);
 			else
-				Data = GetSprintf("5만:%d 만원:%d 5천:%d 천:%d", CashData.mFiftyThousand, CashData.mTenThousand, CashData.mFiveThousand, CashData.mOneThousand);
+				Data = GetSprintf("  5만:%d 만원:%d 5천:%d 천:%d", CashData.mFiftyThousand, CashData.mTenThousand, CashData.mFiveThousand, CashData.mOneThousand);
 			break;
 		default:
 			break;
 		}		
 		break;
-	case 18:		
+	case 19:		
 		switch(TranCode2)
 		{
 		case TRANID_7260:
@@ -6886,7 +6896,7 @@ int	CTranCmn::fnAPP_EditPrintLine_Sub_T3_1(int PrintDevice, void* cData, int Lin
 				if(m_pDevCmn->fnSCR_GetCurrentLangMode() != KOR_MODE)
 					Data = GetSprintf("  Please check your balance.");
 				else
-					Data = GetSprintf("잔액 확인요");
+					Data = GetSprintf("  잔액 확인요");
 			}
 			break;
 		case TRANID_4717:	//#N0270
@@ -6900,7 +6910,7 @@ int	CTranCmn::fnAPP_EditPrintLine_Sub_T3_1(int PrintDevice, void* cData, int Lin
 			break;
 		}		
 		break;		
-	case 19:	
+	case 20:	
 		switch(TranCode2)
 		{
 		case TRANID_7260:
@@ -6932,7 +6942,7 @@ int	CTranCmn::fnAPP_EditPrintLine_Sub_T3_1(int PrintDevice, void* cData, int Lin
 			break;
 		}		
 		break;	
-	case 20:
+	case 21:
 		switch(TranCode2)
 		{
 			case TRANID_4717:	//#N0270
@@ -6947,7 +6957,7 @@ int	CTranCmn::fnAPP_EditPrintLine_Sub_T3_1(int PrintDevice, void* cData, int Lin
 				break;
 		}
 		break;
-	case 21:
+	case 22:
 		if(m_pDevCmn->TranResult)
 		{
 			if(m_pDevCmn->HostLocalSvrMode)
@@ -6969,26 +6979,26 @@ int	CTranCmn::fnAPP_EditPrintLine_Sub_T3_1(int PrintDevice, void* cData, int Lin
 
 		}		
 		break;
-	case 22:
-		break;
-
-		if(!m_pDevCmn->TranResult) 
-			break;
 	case 23:
 		break;
 
 		if(!m_pDevCmn->TranResult) 
-			break;		
+			break;
 	case 24:
+		break;
+
+		if(!m_pDevCmn->TranResult) 
+			break;		
+	case 25:
 		break;
 			if(!m_pDevCmn->TranResult) 
 			break;
-	case 25:
+	case 26:
 
 		if(!m_pDevCmn->TranResult) 
 			break;
 	default:
-		break;   
+		break;  
 	}    
 
 	if (Data.GetLength())

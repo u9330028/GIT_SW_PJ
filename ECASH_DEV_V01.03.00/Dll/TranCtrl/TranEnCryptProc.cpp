@@ -6639,7 +6639,7 @@ int CTranCmn::fnAPP_TranEnc294_294_BC_JCB_ENC_FOREGIN(int nTrCode)
 	char Pass[17];
  	int  pinlen = 0, acctlen = 0;
 
-	BYTE cardNum[9];
+	//BYTE cardNum[9];
 	BYTE passWord[9];
 	BYTE workKeyS[16+1];
 	BYTE encrypt[9];
@@ -6654,8 +6654,8 @@ int CTranCmn::fnAPP_TranEnc294_294_BC_JCB_ENC_FOREGIN(int nTrCode)
 	const char* SUBMASTER_KEY_BC_F	= "0785852607920785";	// 외환은행에서 제공한 마스터 키
 
 #ifdef CERTI_TEST_KEY000
-	const char* MASTER_KEY_BC_F		=  "4A1AFEE3A291761A";		// BC해외카드에서 제공한 마스터 키 TEST
-#else														//  
+	const char* MASTER_KEY_BC_F		=  "4A1AFEE3A291761A";	// BC해외카드에서 제공한 마스터 키 TEST
+#else
 	const char* MASTER_KEY_BC_F		=  "2CF8D6B3FBD59B5B";	// BC해외카드에서 제공한 마스터 키 real
 #endif
 
@@ -6690,18 +6690,6 @@ int CTranCmn::fnAPP_TranEnc294_294_BC_JCB_ENC_FOREGIN(int nTrCode)
 	memcpy(working,temp1, 16);
 	working[16] = 0x00;
 
-	sprintf((char *)szUnCardNum, "%s",fnDES_Cvt_CardNum((char *)CardData.ISO2Buff, CardData.ISO2size)); 
-	int nCard = MakePack(szUnCardNum, szMemberNum, strlen((char *)szUnCardNum));	
-	// Make cardNum Block
-	// 20141231 I KYS
-	memcpy(&Card[0], &szMemberNum[0], nCard);
-
-	acctlen = strlen(Card);
-	memset(tempCard, 0x30, 4);
-	memcpy(&tempCard[4], &Card[acctlen - 13]  , 12);
-	sLen = MakePack((BYTE *)&tempCard[0], (BYTE *)&cardNum[0], 16); 
-	cardNum[sLen] = 0x00;
-
 	// Make passWord Block
 	memcpy(&Pass[0], &Accept.DesPassWord[0], 8);														// 비밀번호
 	pinlen = strlen(Pass);
@@ -6710,8 +6698,8 @@ int CTranCmn::fnAPP_TranEnc294_294_BC_JCB_ENC_FOREGIN(int nTrCode)
 	sLen = MakePack((BYTE *)&tempPass[0], (BYTE *)&passWord[0], 16);
 	passWord[sLen] = 0x00;
 
-
-	m_pDevCmn->ENCRYPT(encrypt, passWord, 8, workKey);
+	//#CS0004
+	m_pDevCmn->ENCRYPT(encrypt, passWord, 8, comp1);
 	//DES    ( CRYPTAGE, cardNum, comp1, encrypt );
 
 
