@@ -1,0 +1,216 @@
+
+[SOCIETAL]
+? Mars colonization
+? Population is nomadic
+? Billions of refugees due to climate change
+? People have moved out of urban centers
+? Majority of population in urban centers
+? Free air travel
+? People spend more time isolated
+? People spend more time in social/public settings
+? People spend the same amount of time working as today
+? People spend less time working but enjoy a better quality of life
+? People are jobless (due to AI and robots) and have a poorer quality of life
+? All or almost all natural communicable diseases will be eradicated
+
+[TECHNOLOGICAL]
+? Telemedicine is common
+? No desalination
+? Water desalination successful
+? Renewable energy is common
+? Commercial space travel
+? Commercial exo-suits available
+? People spend most of their time in virtual worlds
+? Augmented reality is everywhere
+? Autonomous vehicles are everywhere
+? Ai is a common tool
+? Robots are commonly used in everyday life
+? Wearable robots are common
+? Desktop DNA printing will be commonly available
+? Ubiquitous DNA scanning will be available in a variety of forms, cheap and accessible
+? Brain-computer interface is the dominate method of human machine interface
+? Wet augmentation (bio-implants, underskin implants) is common
+? Full sensory, physical, and cognitive augmentation is used to amplify human performance
+? Hackers are able to hack into human brains
+? Flying cars are in use
+
+[ENVIRONMENTAL]
+? Drinkable water is abundant
+? Drinkable water is scarce
+? Minor climate change
+? Major climate change
+? Formerly desert areas are now fertile
+? Overabundance of human waste
+? Coal enters permanent decline
+? Oil enters permanent decline Ultra cheap, efficient batteries
+? Energy is abundant
+? Energy is scarce
+? Africa has been ag-industrialized
+? Europe and US outsource food production
+? Cellular agriculture is common place
+? Microbiomes change farming
+? Large scale mining operations in space
+
+[ECONOMIC]
+? One universal global currency
+? Car ownership is novelty
+? Sharing economy prevails
+? Affordable healthcare for all
+? Free education for all thanks to AR/VR
+? Increased disparity between rich and poor
+? Decreased disparity between rich and poor
+? Insurance industry implodes
+? Gold standard returns
+? Most people derive basic income from blockchain/crypto “mining” activity
+? Fortune 500 are all decentralized autonomous organizations (DAOs)
+? Largest cyber-bank heist has already occurred.
+
+[POLITICAL]
+? Nations are mostly the same as today
+? Ideologies, rather than geographic countries
+? Nations divide into city-states and transnational corporate sovereignties
+? Mostly peaceful but with small civil wars
+? War due to climate change
+? “Developing world” is now the center of business and innovation
+? “The West” continues to dominate financially
+? Voting and governance for democratic institutions move to the blockchain
+
+
+? 사람들이 도시 중심에서 벗어났습니다
+? 도시 중심 인구의 대다수
+
+? 에너지가 풍부하다
+? 에너지가 부족하다
+
+? 부자와 빈자의 격차 증가
+? 부자와 빈자의 격차 감소
+
+? 국가는 도시 국가와 다국적 기업으로 나뉩니다 (국가 이념 : X)
+  - 같은 생각을 같은 사람들이 모여서 싸이버 국가를 만들고 사이버 머니로 전자화폐(국제 통화) -> 달러가 없어지고.. 신규 화폐
+
+[사회]
+? 화성 식민지
+? 인구는 유목민
+? 기후 변화로 인한 수십억의 난민
+? 사람들이 도시 중심에서 벗어났습니다
+? 도시 중심 인구의 대다수
+? 무료 항공 여행
+? 사람들은 고립 된 시간을 더 보낸다
+? 사람들은 소셜 / 공공 환경에서 더 많은 시간을 보냅니다
+? 사람들은 오늘날과 같은 시간을 일하면서 보낸다
+? 사람들은 일하는 데 시간이 덜 걸리지 만 삶의 질이 향상됩니다
+? 사람들은 직업이없고 (AI와 로봇으로 인해) 품질이 떨어집니다. 인생의
+? 모든 또는 거의 모든 자연적인 전염병이 근절됩니다
+
+[기술]
+? 원격 진료는 일반적입니다
+? 담수화 없음
+? 담수화 성공
+? 재생 가능 에너지는 일반적입니다
+? 상업 우주 여행
+? 유효한 상업용 엑소 슈트
+? 사람들은 대부분의 시간을 가상 세계에서 보낸다
+? 증강 현실은 어디에나 있습니다
+? 자율 주행 차가 어디에나 있습니다
+? Ai는 일반적인 도구입니다
+? 로봇은 일상 생활에서 일반적으로 사용됩니다
+? 웨어러블 로봇은 일반적입니다
+? 데스크탑 DNA 인쇄가 일반적으로 가능합니다
+? 유비쿼터스 DNA 스캐닝은 다양한 형태로 이용 가능합니다. 싸고 접근하기 쉬운
+? 뇌-컴퓨터 인터페이스는 인간의 지배적 인 방법입니다 기계 인터페이스
+? 습식 증강 (바이오 임플란트, 언더 스킨 임플란트)이 일반적입니다.
+? 감각, 신체적,인지 적 확대가 증폭에 사용됩니다.인간의 성과
+? 해커는 인간의 두뇌를 해킹 할 수 있습니다
+? 비행 차가 사용 중입니다
+
+[환경]
+? 식수가 풍부합니다
+? 식수 부족
+? 사소한 기후 변화
+? 주요 기후 변화
+? 이전에는 사막 지역이 비옥 해졌습니다.
+? 인간 폐기물의 과잉
+? 석탄이 영구적으로 감소합니다
+? 석유가 영구적으로 하락합니다
+? 매우 저렴하고 효율적인 배터리
+? 에너지가 풍부하다
+? 에너지가 부족하다
+? 아프리카는 산업화되었다
+? 유럽과 미국은 식품 생산을 아웃소싱
+? 세포 농업은 일반적인 장소입니다
+? 미생물 군집 변경 농업
+? 우주에서의 대규모 채굴 작업
+
+[간결한]
+? 하나의 보편적 글로벌 통화
+? 자동차 소유권은 참신
+? 공유 경제가 우선
+? 모두를위한 저렴한 건강 관리
+? AR / VR 덕분에 모든 사람을위한 무료 교육
+? 부자와 빈자의 격차 증가
+? 부자와 빈자의 격차 감소
+? 보험 산업이 함축 됨
+? 금본위 제
+? 대부분의 사람들은 블록 체인 / 암호화“채굴”에서 기본 소득을 얻습니다. 활동
+? Fortune 500 대 기업은 모두 탈 중앙화 된 자치 단체 (DAO)입니다.
+? 가장 큰 사이버 은행 강탈이 이미 발생했습니다.
+
+[주재관]
+? 국가는 오늘날과 거의 동일
+? 지리적 국가보다는 이데올로기
+? 국가는 도시 국가와 다국적 기업으로 나뉩니다 주권
+? 대부분 평화 롭지 만 작은 내전
+? 기후 변화로 인한 전쟁
+? "개발 도상국"은 이제 비즈니스와 혁신의 중심입니다
+? "서부"는 재정적으로 계속 지배하고 있습니다.
+? 민주주의 기관의 투표와 거버넌스는 블록 체인
+
+
+[0718]
+.소규모 화장실 공동 사용 방안
+
+- 화장실 출입 (공용 화실실 웹)
+
+- deploy(배치하다)/inventory(재고조사)
+- AI 설명 가능 해야 한다
+
+[강태영] 
+ .Never Clover팀
+ .프로젝트/기획 관리
+ 
+-학습, 인지, 번역, 기타
+-가상 -> 실제 가장으로 적용해보고 -> 테스트 해 볼수 있었으면 좋겠다
+ *가상 VM
+
+-분석
+ .기술
+ .비용
+ .서비스
+ .비대면인증
+ .비디오->신분증,얼굴인식
+ .인공지능 ATM -> 부정인식
+ 
+-보고서 작성
+-auto ML, GAN
+-스피커.자율주행->전 분야에 적용된다
+-비젼과 음성 분리
+
+[비젼기술]
+-현금찾는사람 + 손이 같은지 확인 대응
+-사진으로 하나의 사람임 순서대로 편집해서 보여준다.
+-합성기술
+
+*얼굴만으로 사용 할 수 있는 
+*비대면 인식이 가능하다.
+
+협업은 어떻게 하고 ?
+
+
+향후 수용가능 해야 한다. -> 지속적으로 운영 되어야 한다.
+데이터 정의
+
+[환경변수]
+--> 날씨/온도에따른 기회 제공
+
+
+
